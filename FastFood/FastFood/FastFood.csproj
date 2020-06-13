@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{617242DA-EFF2-4785-AB08-48E5BC04BB7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FastFood</RootNamespace>
+    <AssemblyName>FastFood</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71">
+      <HintPath>..\..\TK\KFC_FASTFOOD\bin\Debug\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_ChangePassword.Designer.cs">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.Designer.cs">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.Designer.cs">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.Designer.cs">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_CityCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_CityCategory.Designer.cs">
+      <DependentUpon>UC_CityCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Category.Designer.cs">
+      <DependentUpon>UC_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Noti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Noti.Designer.cs">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Order.Designer.cs">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Personnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Personnel.Designer.cs">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Product.Designer.cs">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_System.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_System.Designer.cs">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Connect.resx">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Splash.resx">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_UserPermission.resx">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+    <Folder Include="Report\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
