@@ -34,13 +34,11 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // DragHeader
@@ -53,7 +51,7 @@
             // lblStatus
             // 
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic);
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(9, 239);
             this.lblStatus.Name = "lblStatus";
@@ -67,7 +65,7 @@
             // 
             this.pictureBoxLoading.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLoading.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoading.Image")));
-            this.pictureBoxLoading.Location = new System.Drawing.Point(264, 154);
+            this.pictureBoxLoading.Location = new System.Drawing.Point(265, 90);
             this.pictureBoxLoading.Name = "pictureBoxLoading";
             this.pictureBoxLoading.Size = new System.Drawing.Size(82, 82);
             this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -86,14 +84,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pictureBoxMain
-            // 
-            this.pictureBoxMain.Location = new System.Drawing.Point(264, 59);
-            this.pictureBoxMain.Name = "pictureBoxMain";
-            this.pictureBoxMain.Size = new System.Drawing.Size(82, 54);
-            this.pictureBoxMain.TabIndex = 13;
-            this.pictureBoxMain.TabStop = false;
             // 
             // panel1
             // 
@@ -144,7 +134,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBoxMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Splash";
@@ -152,7 +141,6 @@
             this.Text = "Khởi động chương trình";
             this.Load += new System.EventHandler(this.frm_Splash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,7 +148,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.PictureBox pictureBoxMain;
         private Bunifu.Framework.UI.BunifuDragControl DragHeader;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.PictureBox pictureBoxLoading;
