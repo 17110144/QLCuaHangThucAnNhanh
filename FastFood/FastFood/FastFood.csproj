@@ -71,7 +71,6 @@
     <Compile Include="BusinessLayer\cls_Category.cs" />
     <Compile Include="BusinessLayer\cls_Database.cs" />
     <Compile Include="BusinessLayer\cls_Employess.cs" />
-    <Compile Include="BusinessLayer\cls_EnCrypt.cs" />
     <Compile Include="BusinessLayer\cls_Order.cs" />
     <Compile Include="BusinessLayer\cls_Product.cs" />
     <Compile Include="BusinessLayer\cls_Report.cs" />
@@ -82,6 +81,12 @@
     </Compile>
     <Compile Include="PresentationLayer\Forms\frm_About.Designer.cs">
       <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_BackupDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_BackupDatabase.Designer.cs">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Forms\frm_ChangePassword.cs">
       <SubType>Form</SubType>
@@ -107,6 +112,12 @@
     <Compile Include="PresentationLayer\Forms\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_RestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_RestoreDatabase.Designer.cs">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Forms\frm_Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,36 +130,17 @@
     <Compile Include="PresentationLayer\Forms\frm_UserPermission.Designer.cs">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\UCFuntion\UC_DepartmentManager.cs">
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\UCFuntion\UC_DepartmentManager.Designer.cs">
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.Designer.cs">
       <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_Salary.cs">
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_Salary.Designer.cs">
-      <DependentUpon>UC_Salary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_System.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_System.Designer.cs">
-      <DependentUpon>UC_System.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_Category.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\UCSytem\UC_Category.Designer.cs">
-      <DependentUpon>UC_Category.cs</DependentUpon>
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.Designer.cs">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\UCSytem\UC_Home.cs">
       <SubType>UserControl</SubType>
@@ -180,8 +172,30 @@
     <Compile Include="PresentationLayer\UCSytem\UC_Product.Designer.cs">
       <DependentUpon>UC_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.Designer.cs">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PresentationLayer\Forms\frm_About.resx">
       <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_BackupDatabase.resx">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
@@ -195,37 +209,37 @@
     <EmbeddedResource Include="PresentationLayer\Forms\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_RestoreDatabase.resx">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\frm_Splash.resx">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\frm_UserPermission.resx">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCFuntion\UC_DepartmentManager.resx">
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DepartmentManager.resx">
       <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Personnel.resx">
-      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DrinkManager.resx">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Product.resx">
-      <DependentUpon>UC_Product.cs</DependentUpon>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Noti.resx">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Salary.resx">
       <DependentUpon>UC_Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_System.resx">
+      <DependentUpon>UC_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Category.resx">
-      <DependentUpon>UC_Category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Noti.resx">
-      <DependentUpon>UC_Noti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Order.resx">
-      <DependentUpon>UC_Order.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

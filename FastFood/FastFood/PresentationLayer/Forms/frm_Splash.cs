@@ -55,7 +55,7 @@ namespace FastFood.Forms
         private void _testConnectDB()
         {
             
-            if (!lib.cls_TestConnectDB._testConnect())
+            if (!BusinessLayer.cls_TestConnectDB._testConnect())
             {
                 lblStatus.Text = "...Không thể kết nối đến CSDL. Đang cấu hình lại";
                 Thread th = new Thread(new ThreadStart(_openConnectForm));

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnClose = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
@@ -51,6 +51,7 @@
             this.btnConnect = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -68,15 +69,40 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(402, 0);
+            this.btnClose.Activecolor = System.Drawing.Color.Empty;
+            this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.BackgroundImage = global::FastFood.Properties.Resources.close_24px;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.ButtonText = "";
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DisabledColor = System.Drawing.Color.Gray;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnClose.Iconimage = null;
+            this.btnClose.Iconimage_right = null;
+            this.btnClose.Iconimage_right_Selected = null;
+            this.btnClose.Iconimage_Selected = null;
+            this.btnClose.IconMarginLeft = 0;
+            this.btnClose.IconMarginRight = 0;
+            this.btnClose.IconRightVisible = true;
+            this.btnClose.IconRightZoom = 0D;
+            this.btnClose.IconVisible = true;
+            this.btnClose.IconZoom = 90D;
+            this.btnClose.IsTab = false;
+            this.btnClose.Location = new System.Drawing.Point(403, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnClose.Name = "btnClose";
+            this.btnClose.Normalcolor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnClose.selected = false;
             this.btnClose.Size = new System.Drawing.Size(32, 28);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.TabIndex = 83;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClose.Textcolor = System.Drawing.Color.AliceBlue;
+            this.btnClose.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
@@ -136,6 +162,7 @@
             // 
             this.lblSeverName.AutoSize = true;
             this.lblSeverName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeverName.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblSeverName.Location = new System.Drawing.Point(12, 138);
             this.lblSeverName.Name = "lblSeverName";
             this.lblSeverName.Size = new System.Drawing.Size(89, 20);
@@ -146,6 +173,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label3.Location = new System.Drawing.Point(12, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 20);
@@ -156,6 +184,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblUserName.Location = new System.Drawing.Point(39, 204);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(82, 20);
@@ -166,6 +195,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblPassword.Location = new System.Drawing.Point(39, 234);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(73, 20);
@@ -176,6 +206,7 @@
             // 
             this.lblSelectDB.AutoSize = true;
             this.lblSelectDB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectDB.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblSelectDB.Location = new System.Drawing.Point(12, 318);
             this.lblSelectDB.Name = "lblSelectDB";
             this.lblSelectDB.Size = new System.Drawing.Size(119, 20);
@@ -188,7 +219,7 @@
             this.txtUserName.Location = new System.Drawing.Point(174, 201);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(248, 27);
-            this.txtUserName.TabIndex = 15;
+            this.txtUserName.TabIndex = 3;
             this.txtUserName.Text = "sa";
             // 
             // txtPassword
@@ -198,7 +229,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(248, 27);
-            this.txtPassword.TabIndex = 16;
+            this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtServerName
@@ -207,29 +238,33 @@
             this.txtServerName.Location = new System.Drawing.Point(174, 135);
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.Size = new System.Drawing.Size(248, 27);
-            this.txtServerName.TabIndex = 17;
+            this.txtServerName.TabIndex = 1;
             this.txtServerName.TextChanged += new System.EventHandler(this.txtServerName_TextChanged);
             // 
             // cmbAuthor
             // 
+            this.cmbAuthor.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAuthor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAuthor.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cmbAuthor.FormattingEnabled = true;
             this.cmbAuthor.Location = new System.Drawing.Point(174, 167);
             this.cmbAuthor.Name = "cmbAuthor";
             this.cmbAuthor.Size = new System.Drawing.Size(248, 28);
-            this.cmbAuthor.TabIndex = 18;
+            this.cmbAuthor.TabIndex = 2;
             this.cmbAuthor.SelectedValueChanged += new System.EventHandler(this.cmbAuthor_SelectedValueChanged);
             // 
             // cmbSelectDB
             // 
+            this.cmbSelectDB.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbSelectDB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSelectDB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectDB.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cmbSelectDB.FormattingEnabled = true;
             this.cmbSelectDB.Location = new System.Drawing.Point(174, 315);
             this.cmbSelectDB.Name = "cmbSelectDB";
             this.cmbSelectDB.Size = new System.Drawing.Size(248, 28);
-            this.cmbSelectDB.TabIndex = 20;
+            this.cmbSelectDB.TabIndex = 6;
             // 
             // btnGetDB
             // 
@@ -262,10 +297,10 @@
             this.btnGetDB.OnHoverTextColor = System.Drawing.Color.White;
             this.btnGetDB.selected = false;
             this.btnGetDB.Size = new System.Drawing.Size(184, 33);
-            this.btnGetDB.TabIndex = 80;
+            this.btnGetDB.TabIndex = 5;
             this.btnGetDB.Text = "Lấy danh sách Database";
             this.btnGetDB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGetDB.Textcolor = System.Drawing.Color.White;
+            this.btnGetDB.Textcolor = System.Drawing.Color.AliceBlue;
             this.btnGetDB.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetDB.Click += new System.EventHandler(this.btnGetDB_Click);
             // 
@@ -300,10 +335,10 @@
             this.btnConnect.OnHoverTextColor = System.Drawing.Color.White;
             this.btnConnect.selected = false;
             this.btnConnect.Size = new System.Drawing.Size(103, 33);
-            this.btnConnect.TabIndex = 81;
+            this.btnConnect.TabIndex = 7;
             this.btnConnect.Text = "Connect";
             this.btnConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnConnect.Textcolor = System.Drawing.Color.White;
+            this.btnConnect.Textcolor = System.Drawing.Color.AliceBlue;
             this.btnConnect.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -338,10 +373,10 @@
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(103, 33);
-            this.btnCancel.TabIndex = 82;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancel.Textcolor = System.Drawing.Color.White;
+            this.btnCancel.Textcolor = System.Drawing.Color.AliceBlue;
             this.btnCancel.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -396,7 +431,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelRight;
@@ -417,5 +451,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnConnect;
         private Bunifu.Framework.UI.BunifuFlatButton btnGetDB;
         private System.Windows.Forms.PictureBox pictureBox;
+        private Bunifu.Framework.UI.BunifuFlatButton btnClose;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

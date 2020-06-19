@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.panelSide = new System.Windows.Forms.Panel();
-            this.pnlLine = new System.Windows.Forms.Panel();
-            this.pnlLeftTop = new System.Windows.Forms.Panel();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panelControls = new System.Windows.Forms.Panel();
-            this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.panelSide = new System.Windows.Forms.Panel();
             this.btnSystem = new System.Windows.Forms.Button();
             this.btnSalary = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.pnlLine = new System.Windows.Forms.Panel();
+            this.pnlLeftTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panelControls = new System.Windows.Forms.Panel();
+            this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlLeft.SuspendLayout();
             this.pnlLeftTop.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -87,127 +87,6 @@
             this.lblInfo.Text = "?";
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
-            // panelSide
-            // 
-            this.panelSide.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelSide.Location = new System.Drawing.Point(3, 122);
-            this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(7, 60);
-            this.panelSide.TabIndex = 4;
-            // 
-            // pnlLine
-            // 
-            this.pnlLine.BackColor = System.Drawing.Color.White;
-            this.pnlLine.Location = new System.Drawing.Point(0, 114);
-            this.pnlLine.Name = "pnlLine";
-            this.pnlLine.Size = new System.Drawing.Size(230, 2);
-            this.pnlLine.TabIndex = 2;
-            // 
-            // pnlLeftTop
-            // 
-            this.pnlLeftTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlLeftTop.Controls.Add(this.label1);
-            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeftTop.Name = "pnlLeftTop";
-            this.pnlLeftTop.Size = new System.Drawing.Size(229, 108);
-            this.pnlLeftTop.TabIndex = 1;
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHeader.Controls.Add(this.btnSetting);
-            this.pnlHeader.Controls.Add(this.btnMinimize);
-            this.pnlHeader.Controls.Add(this.btnClose);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(229, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(893, 26);
-            this.pnlHeader.TabIndex = 1;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnlHeader;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.pnlLeft;
-            this.bunifuDragControl2.Vertical = true;
-            // 
-            // panelControls
-            // 
-            this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControls.Location = new System.Drawing.Point(229, 26);
-            this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(893, 619);
-            this.panelControls.TabIndex = 4;
-            // 
-            // bunifuDragControl3
-            // 
-            this.bunifuDragControl3.Fixed = true;
-            this.bunifuDragControl3.Horizontal = true;
-            this.bunifuDragControl3.TargetControl = this.panelControls;
-            this.bunifuDragControl3.Vertical = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(3, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 67);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Fast Food";
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnSetting.Image = global::FastFood.Properties.Resources.settings_24px;
-            this.btnSetting.Location = new System.Drawing.Point(802, 0);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(27, 26);
-            this.btnSetting.TabIndex = 3;
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnMinimize.Image = global::FastFood.Properties.Resources.subtract_24px;
-            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(835, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(27, 26);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnClose.Image = global::FastFood.Properties.Resources.close_24px;
-            this.btnClose.Location = new System.Drawing.Point(868, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 26);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // btnLogout
             // 
             this.btnLogout.FlatAppearance.BorderSize = 0;
@@ -224,6 +103,14 @@
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.MouseCaptureChanged += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // panelSide
+            // 
+            this.panelSide.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelSide.Location = new System.Drawing.Point(3, 122);
+            this.panelSide.Name = "panelSide";
+            this.panelSide.Size = new System.Drawing.Size(7, 60);
+            this.panelSide.TabIndex = 4;
             // 
             // btnSystem
             // 
@@ -310,6 +197,36 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // pnlLine
+            // 
+            this.pnlLine.BackColor = System.Drawing.Color.White;
+            this.pnlLine.Location = new System.Drawing.Point(0, 114);
+            this.pnlLine.Name = "pnlLine";
+            this.pnlLine.Size = new System.Drawing.Size(230, 2);
+            this.pnlLine.TabIndex = 2;
+            // 
+            // pnlLeftTop
+            // 
+            this.pnlLeftTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlLeftTop.Controls.Add(this.label1);
+            this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeftTop.Name = "pnlLeftTop";
+            this.pnlLeftTop.Size = new System.Drawing.Size(229, 108);
+            this.pnlLeftTop.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 67);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Fast Food";
+            // 
             // btnOrder
             // 
             this.btnOrder.FlatAppearance.BorderSize = 0;
@@ -326,6 +243,114 @@
             this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHeader.Controls.Add(this.bunifuFlatButton1);
+            this.pnlHeader.Controls.Add(this.btnSetting);
+            this.pnlHeader.Controls.Add(this.btnMinimize);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(229, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(893, 26);
+            this.pnlHeader.TabIndex = 1;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Empty;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.bunifuFlatButton1.BackgroundImage = global::FastFood.Properties.Resources.close_24px;
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(863, 0);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.MidnightBlue;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(32, 28);
+            this.bunifuFlatButton1.TabIndex = 84;
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.AliceBlue;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnSetting.Image = global::FastFood.Properties.Resources.settings_24px;
+            this.btnSetting.Location = new System.Drawing.Point(806, 0);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(27, 26);
+            this.btnSetting.TabIndex = 3;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnMinimize.Image = global::FastFood.Properties.Resources.subtract_24px;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimize.Location = new System.Drawing.Point(835, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(27, 26);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnlHeader;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.pnlLeft;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // panelControls
+            // 
+            this.panelControls.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControls.Location = new System.Drawing.Point(229, 26);
+            this.panelControls.Name = "panelControls";
+            this.panelControls.Size = new System.Drawing.Size(893, 619);
+            this.panelControls.TabIndex = 4;
+            // 
+            // bunifuDragControl3
+            // 
+            this.bunifuDragControl3.Fixed = true;
+            this.bunifuDragControl3.Horizontal = true;
+            this.bunifuDragControl3.TargetControl = this.panelControls;
+            this.bunifuDragControl3.Vertical = true;
             // 
             // frm_Main
             // 
@@ -355,7 +380,6 @@
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnlLeftTop;
         private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlLine;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnOrder;
@@ -373,5 +397,6 @@
         private System.Windows.Forms.Button btnSetting;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl3;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

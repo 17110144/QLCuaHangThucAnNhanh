@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FastFood.UCSytems;
+using FastFood.PresentationLayer.UCSytem;
+using FastFood.Forms;
 
 namespace FastFood.Forms
 {
@@ -22,11 +23,9 @@ namespace FastFood.Forms
         UC_Order _Order = new UC_Order();
         UC_Product _Product = new UC_Product();
         UC_Personnel _Personnel = new UC_Personnel();
-        UC_Salary _Salary = new UC_Salary();
-        UC_Report _Report = new UC_Report();
-        UC_System _System = new UC_System();
-        UC_Category _Category = new UC_Category();
         UC_Noti _Noti = new UC_Noti();
+        UC_Salary _Salary = new UC_Salary();
+        UC_System _System = new UC_System();
 
         public frm_Main(string NguoiDungID_Login)
         {
@@ -38,10 +37,8 @@ namespace FastFood.Forms
             _Order.Visible = false;
             _Personnel.Visible = false;
             _Product.Visible = false;
-            _Report.Visible = false;
             _Salary.Visible = false;
             _System.Visible = false;
-            _Category.Visible = false;
         }
 
         public static frm_Main Instance
@@ -142,31 +139,6 @@ namespace FastFood.Forms
             }
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnReport);
-            if (_Report.Visible == true)
-            {
-                addControlsToPanel(_Report);
-            }
-            else
-            {
-                addControlsToPanel(_Noti);
-            }
-        }
-
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnCategory);
-            if (_Category.Visible == true)
-            {
-                addControlsToPanel(_Category);
-            }
-            else
-            {
-                addControlsToPanel(_Noti);
-            }
-        }
 
         private void btnSystem_Click(object sender, EventArgs e)
         {
@@ -208,12 +180,12 @@ namespace FastFood.Forms
 
         private void _loadPermission()
         {
-            /*
-            checkPer = (lib.cls_Employess._checkPermission(NguoiDungID) == true) ? true : false;
+
+            checkPer = (BusinessLayer.cls_Employess._checkPermission(NguoiDungID) == true) ? true : false;
 
             if (checkPer == false)
             {
-                DataTable dt = lib.cls_Employess._ListPermission(NguoiDungID);
+                DataTable dt = BusinessLayer.cls_Employess._ListPermission(NguoiDungID);
                 foreach (DataRow dr in dt.Rows)
                 {
                     switch (dr["URL"].ToString())
@@ -227,17 +199,11 @@ namespace FastFood.Forms
                         case "SalaryManager":
                             _Salary.Visible = true;
                             break;
-                        case "ReportManager":
-                            _Report.Visible = true;
-                            break;
                         case "ProductManager":
                             _Product.Visible = true;
                             break;
                         case "Order":
                             _Order.Visible = true;
-                            break;
-                        case "CategoryManager":
-                            _Category.Visible = true;
                             break;
                     }
                 }
@@ -247,12 +213,10 @@ namespace FastFood.Forms
                 _Order.Visible = true;
                 _Personnel.Visible = true;
                 _Product.Visible = true;
-                _Report.Visible = true;
                 _Salary.Visible = true;
                 _System.Visible = true;
-                _Category.Visible = true;
             }
-            */
+
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -264,7 +228,7 @@ namespace FastFood.Forms
         {
             using (frm_ChangePassword changePassword = new frm_ChangePassword())
             {
-                //Forms.frm_Main.Opacity = 50;
+                //frm_Main.Opacity = 50;
                 changePassword.ShowDialog();
             }
         }

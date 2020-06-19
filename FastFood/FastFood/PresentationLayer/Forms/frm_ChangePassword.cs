@@ -58,5 +58,10 @@ namespace FastFood.Forms
             }
             */
         }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

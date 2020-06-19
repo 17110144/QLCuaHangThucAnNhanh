@@ -29,9 +29,9 @@ namespace FastFood.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            string password = lib.cls_EnCrypt.EncryptMD5(txtPassword.Text);
-            string NguoiDungID = lib.cls_Employess._checkLogin(txtTenDangNhap.Text, password);
+
+            string password = txtPassword.Text;
+            string NguoiDungID = BusinessLayer.cls_Employess._checkLogin(txtTenDangNhap.Text, password);
 
             if (NguoiDungID != "ERROR")
             {
@@ -47,7 +47,7 @@ namespace FastFood.Forms
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTenDangNhap.Focus();
             }
-            */
+            
         }
 
         private void txtTenDangNhap_KeyDown(object sender, KeyEventArgs e)

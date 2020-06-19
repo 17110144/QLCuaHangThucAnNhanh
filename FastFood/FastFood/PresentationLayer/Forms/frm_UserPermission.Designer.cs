@@ -40,9 +40,7 @@
             this.cbGoiMon = new System.Windows.Forms.CheckBox();
             this.cbTienLuong = new System.Windows.Forms.CheckBox();
             this.cbSanPham = new System.Windows.Forms.CheckBox();
-            this.cbThongKe = new System.Windows.Forms.CheckBox();
             this.cbNhanSu = new System.Windows.Forms.CheckBox();
-            this.cbDanhMuc = new System.Windows.Forms.CheckBox();
             this.cbHeThong = new System.Windows.Forms.CheckBox();
             this.btnLuu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -52,7 +50,9 @@
             this.panelRight = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btnClose = new System.Windows.Forms.Button();
+            this.cbDanhMuc = new System.Windows.Forms.CheckBox();
+            this.cbThongKe = new System.Windows.Forms.CheckBox();
+            this.btnClose = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -192,18 +192,6 @@
             this.cbSanPham.Text = "Quản lý sản phẩm";
             this.cbSanPham.UseVisualStyleBackColor = true;
             // 
-            // cbThongKe
-            // 
-            this.cbThongKe.AccessibleDescription = "4";
-            this.cbThongKe.AutoSize = true;
-            this.cbThongKe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbThongKe.Location = new System.Drawing.Point(171, 68);
-            this.cbThongKe.Name = "cbThongKe";
-            this.cbThongKe.Size = new System.Drawing.Size(153, 24);
-            this.cbThongKe.TabIndex = 0;
-            this.cbThongKe.Text = "Thống kê -báo cáo";
-            this.cbThongKe.UseVisualStyleBackColor = true;
-            // 
             // cbNhanSu
             // 
             this.cbNhanSu.AccessibleDescription = "2";
@@ -215,18 +203,6 @@
             this.cbNhanSu.TabIndex = 0;
             this.cbNhanSu.Text = "Quản lý nhân sự";
             this.cbNhanSu.UseVisualStyleBackColor = true;
-            // 
-            // cbDanhMuc
-            // 
-            this.cbDanhMuc.AccessibleDescription = "7";
-            this.cbDanhMuc.AutoSize = true;
-            this.cbDanhMuc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDanhMuc.Location = new System.Drawing.Point(171, 38);
-            this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(147, 24);
-            this.cbDanhMuc.TabIndex = 0;
-            this.cbDanhMuc.Text = "Quản lý danh mục";
-            this.cbDanhMuc.UseVisualStyleBackColor = true;
             // 
             // cbHeThong
             // 
@@ -341,18 +317,66 @@
             this.bunifuDragControl2.TargetControl = this.panelHeader;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // cbDanhMuc
+            // 
+            this.cbDanhMuc.AccessibleDescription = "7";
+            this.cbDanhMuc.AutoSize = true;
+            this.cbDanhMuc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDanhMuc.Location = new System.Drawing.Point(171, 38);
+            this.cbDanhMuc.Name = "cbDanhMuc";
+            this.cbDanhMuc.Size = new System.Drawing.Size(147, 24);
+            this.cbDanhMuc.TabIndex = 0;
+            this.cbDanhMuc.Text = "Quản lý danh mục";
+            this.cbDanhMuc.UseVisualStyleBackColor = true;
+            // 
+            // cbThongKe
+            // 
+            this.cbThongKe.AccessibleDescription = "4";
+            this.cbThongKe.AutoSize = true;
+            this.cbThongKe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbThongKe.Location = new System.Drawing.Point(171, 68);
+            this.cbThongKe.Name = "cbThongKe";
+            this.cbThongKe.Size = new System.Drawing.Size(153, 24);
+            this.cbThongKe.TabIndex = 0;
+            this.cbThongKe.Text = "Thống kê -báo cáo";
+            this.cbThongKe.UseVisualStyleBackColor = true;
+            // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::FastFood.Properties.Resources.close_24px;
-            this.btnClose.Location = new System.Drawing.Point(359, 0);
+            this.btnClose.Activecolor = System.Drawing.Color.Empty;
+            this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.BackgroundImage = global::FastFood.Properties.Resources.close_24px;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.ButtonText = "";
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DisabledColor = System.Drawing.Color.Gray;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnClose.Iconimage = null;
+            this.btnClose.Iconimage_right = null;
+            this.btnClose.Iconimage_right_Selected = null;
+            this.btnClose.Iconimage_Selected = null;
+            this.btnClose.IconMarginLeft = 0;
+            this.btnClose.IconMarginRight = 0;
+            this.btnClose.IconRightVisible = true;
+            this.btnClose.IconRightZoom = 0D;
+            this.btnClose.IconVisible = true;
+            this.btnClose.IconZoom = 90D;
+            this.btnClose.IsTab = false;
+            this.btnClose.Location = new System.Drawing.Point(360, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnClose.Name = "btnClose";
+            this.btnClose.Normalcolor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnClose.selected = false;
             this.btnClose.Size = new System.Drawing.Size(32, 28);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.TabIndex = 86;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClose.Textcolor = System.Drawing.Color.AliceBlue;
+            this.btnClose.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frm_UserPermission
@@ -395,19 +419,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.CheckBox cbHeThong;
-        private System.Windows.Forms.CheckBox cbDanhMuc;
         private System.Windows.Forms.CheckBox cbGoiMon;
         private System.Windows.Forms.CheckBox cbTienLuong;
         private System.Windows.Forms.CheckBox cbSanPham;
-        private System.Windows.Forms.CheckBox cbThongKe;
         private System.Windows.Forms.CheckBox cbNhanSu;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+        private System.Windows.Forms.CheckBox cbThongKe;
+        private System.Windows.Forms.CheckBox cbDanhMuc;
+        private Bunifu.Framework.UI.BunifuFlatButton btnClose;
     }
 }

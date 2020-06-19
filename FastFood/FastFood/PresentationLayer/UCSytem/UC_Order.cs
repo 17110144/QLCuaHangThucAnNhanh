@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
-namespace FastFood.UCSytems
+namespace FastFood.PresentationLayer.UCSytem
 {
     public partial class UC_Order : UserControl
     {
@@ -18,12 +18,11 @@ namespace FastFood.UCSytems
         string nhanVienID;
         string maHD;
         DataTable tbOrder = new DataTable();
+
         public UC_Order()
         {
             InitializeComponent();
-
         }
-
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             /*

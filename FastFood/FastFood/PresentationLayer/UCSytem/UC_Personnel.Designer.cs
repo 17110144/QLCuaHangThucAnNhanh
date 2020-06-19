@@ -1,4 +1,4 @@
-﻿namespace FastFood.UCSytems
+﻿namespace FastFood.PresentationLayer.UCSytem
 {
     partial class UC_Personnel
     {

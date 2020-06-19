@@ -496,7 +496,7 @@ namespace FastFood.BusinessLayer
         public static bool _checkNameUser(string name)
         {
             string query = string.Format("SELECT TenDangNhap FROM tbl_NguoiDung WHERE TenDangNhap = N'{0}'", name);
-            DataTable dt = lib.cls_Database.TableRead(query);
+            DataTable dt = BusinessLayer.cls_Database.TableRead(query);
             if (dt.Rows.Count > 0)
             {
                 return false;
@@ -507,7 +507,7 @@ namespace FastFood.BusinessLayer
         public static bool _checkUserPermission(int NhanVienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_NguoiDung WHERE NhanVienID = '{0}'", NhanVienID);
-            DataTable dt = lib.cls_Database.TableRead(query);
+            DataTable dt = BusinessLayer.cls_Database.TableRead(query);
             if (dt.Rows.Count > 0)
             {
                 return false;
