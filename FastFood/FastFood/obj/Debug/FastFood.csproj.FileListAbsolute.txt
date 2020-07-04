@@ -29,7 +29,6 @@ C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\o
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_Splash.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_UserPermission.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Properties.Resources.resources
-C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.UCSytems.UC_Category.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.GenerateResource.cache
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.CoreCompileInputs.cache
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.exe
@@ -38,5 +37,11 @@ C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\b
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.exe
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.pdb
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.CopyComplete
-C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.UCSytems.UC_Noti.resources
-C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.UCSytems.UC_Order.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.Forms.frm_BackupDatabase.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.Forms.frm_RestoreDatabase.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Salary.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_System.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DepartmentManager.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DrinkManager.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Noti.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Home.resources

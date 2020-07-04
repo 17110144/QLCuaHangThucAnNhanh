@@ -67,49 +67,123 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frm_About.cs">
+    <Compile Include="BusinessLayer\cls_BackupRestore.cs" />
+    <Compile Include="BusinessLayer\cls_Category.cs" />
+    <Compile Include="BusinessLayer\cls_Database.cs" />
+    <Compile Include="BusinessLayer\cls_Employess.cs" />
+    <Compile Include="BusinessLayer\cls_Order.cs" />
+    <Compile Include="BusinessLayer\cls_Product.cs" />
+    <Compile Include="BusinessLayer\cls_Report.cs" />
+    <Compile Include="BusinessLayer\cls_Salary.cs" />
+    <Compile Include="BusinessLayer\cls_TestConnectDB.cs" />
+    <Compile Include="PresentationLayer\Forms\frm_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_About.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_About.Designer.cs">
       <DependentUpon>frm_About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_ChangePassword.cs">
+    <Compile Include="PresentationLayer\Forms\frm_BackupDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_ChangePassword.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_BackupDatabase.Designer.cs">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_ChangePassword.Designer.cs">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Connect.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Connect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Connect.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Connect.Designer.cs">
       <DependentUpon>frm_Connect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Login.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Login.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Main.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Main.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Splash.cs">
+    <Compile Include="PresentationLayer\Forms\frm_RestoreDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Splash.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_RestoreDatabase.Designer.cs">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\frm_Splash.Designer.cs">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_UserPermission.cs">
+    <Compile Include="PresentationLayer\Forms\frm_UserPermission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_UserPermission.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\frm_UserPermission.Designer.cs">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </Compile>
-    <Compile Include="lib\cls_TestConnectDB.cs" />
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DepartmentManager.Designer.cs">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.Designer.cs">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Noti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Noti.Designer.cs">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Order.Designer.cs">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Personnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Personnel.Designer.cs">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Product.Designer.cs">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCSytem\UC_System.Designer.cs">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -117,94 +191,55 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UCSytems\UC_Category.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Category.Designer.cs">
-      <DependentUpon>UC_Category.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Home.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Home.Designer.cs">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Noti.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Noti.Designer.cs">
-      <DependentUpon>UC_Noti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Order.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Order.Designer.cs">
-      <DependentUpon>UC_Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Personnel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Personnel.Designer.cs">
-      <DependentUpon>UC_Personnel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Product.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Product.Designer.cs">
-      <DependentUpon>UC_Product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Report.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Report.Designer.cs">
-      <DependentUpon>UC_Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_Salary.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_Salary.Designer.cs">
-      <DependentUpon>UC_Salary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSytems\UC_System.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSytems\UC_System.Designer.cs">
-      <DependentUpon>UC_System.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\frm_About.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_About.resx">
       <DependentUpon>frm_About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_ChangePassword.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_BackupDatabase.resx">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Connect.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Connect.resx">
       <DependentUpon>frm_Connect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Login.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Main.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Splash.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_RestoreDatabase.resx">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_Splash.resx">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_UserPermission.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\frm_UserPermission.resx">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DepartmentManager.resx">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DrinkManager.resx">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Noti.resx">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Salary.resx">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_System.resx">
+      <DependentUpon>UC_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCSytems\UC_Category.resx">
-      <DependentUpon>UC_Category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCSytems\UC_Noti.resx">
-      <DependentUpon>UC_Noti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCSytems\UC_Order.resx">
-      <DependentUpon>UC_Order.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,16 +250,271 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\SVN-Segoe Print.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
-    <Folder Include="UCFunction\" />
+    <Folder Include="DBLayer\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\..\TK\KFC_FASTFOOD\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_shopping_cart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_settings_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative_tools_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_pointing_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available_updates_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cafe_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client_company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_company_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference_call_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_card_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couple_globe_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_configuration_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FastFood.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FastFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast-Food-Free-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduation_cap_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hamburger_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kfc_chicken_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_with_yellow_tie_in_jacket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_shop_sale_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_delivered_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planner_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\provider_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_mark_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_mark_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive_cash_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_shopping_basket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_down_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sqlsever.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sqlsever2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_task_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world_map_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worldwide_location_120px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
