@@ -309,7 +309,7 @@
             this.btnThem.Location = new System.Drawing.Point(16, 128);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnThem.OnHovercolor = System.Drawing.Color.Black;
+            this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
             this.btnThem.Size = new System.Drawing.Size(125, 44);
@@ -350,7 +350,7 @@
             this.btnSua.Location = new System.Drawing.Point(147, 128);
             this.btnSua.Name = "btnSua";
             this.btnSua.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnSua.OnHovercolor = System.Drawing.Color.Black;
+            this.btnSua.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnSua.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSua.selected = false;
             this.btnSua.Size = new System.Drawing.Size(126, 44);
@@ -391,7 +391,7 @@
             this.btnXoa.Location = new System.Drawing.Point(279, 128);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnXoa.OnHovercolor = System.Drawing.Color.Black;
+            this.btnXoa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnXoa.OnHoverTextColor = System.Drawing.Color.White;
             this.btnXoa.selected = false;
             this.btnXoa.Size = new System.Drawing.Size(125, 44);
@@ -432,7 +432,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(73, 178);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnCapNhat.OnHovercolor = System.Drawing.Color.Black;
+            this.btnCapNhat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnCapNhat.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCapNhat.selected = false;
             this.btnCapNhat.Size = new System.Drawing.Size(125, 44);
@@ -473,7 +473,7 @@
             this.btnHuyBo.Location = new System.Drawing.Point(204, 178);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnHuyBo.OnHovercolor = System.Drawing.Color.Black;
+            this.btnHuyBo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnHuyBo.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHuyBo.selected = false;
             this.btnHuyBo.Size = new System.Drawing.Size(125, 44);

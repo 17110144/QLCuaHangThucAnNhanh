@@ -191,6 +191,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.BackColor = System.Drawing.Color.AliceBlue;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(83, 28);
             this.txtSearch.Name = "txtSearch";
@@ -280,6 +281,7 @@
             // 
             // txtEmployess
             // 
+            this.txtEmployess.BackColor = System.Drawing.Color.AliceBlue;
             this.txtEmployess.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmployess.Location = new System.Drawing.Point(284, 34);
             this.txtEmployess.Name = "txtEmployess";
@@ -298,6 +300,7 @@
             // 
             // txtUser
             // 
+            this.txtUser.BackColor = System.Drawing.Color.AliceBlue;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(93, 34);
             this.txtUser.Name = "txtUser";
@@ -360,6 +363,7 @@
             // 
             // txtReturnPayment
             // 
+            this.txtReturnPayment.BackColor = System.Drawing.Color.AliceBlue;
             this.txtReturnPayment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReturnPayment.Location = new System.Drawing.Point(301, 82);
             this.txtReturnPayment.Name = "txtReturnPayment";
@@ -378,6 +382,7 @@
             // 
             // txtReceive
             // 
+            this.txtReceive.BackColor = System.Drawing.Color.AliceBlue;
             this.txtReceive.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceive.Location = new System.Drawing.Point(98, 82);
             this.txtReceive.Name = "txtReceive";
@@ -397,6 +402,7 @@
             // 
             // txtDiscount
             // 
+            this.txtDiscount.BackColor = System.Drawing.Color.AliceBlue;
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.Location = new System.Drawing.Point(301, 29);
             this.txtDiscount.Name = "txtDiscount";
@@ -415,6 +421,7 @@
             // 
             // txtMoney
             // 
+            this.txtMoney.BackColor = System.Drawing.Color.AliceBlue;
             this.txtMoney.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoney.Location = new System.Drawing.Point(98, 30);
             this.txtMoney.Name = "txtMoney";

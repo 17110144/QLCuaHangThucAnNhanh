@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFood.Forms;
 using FastFood.PresentationLayer.Forms;
+using FastFood.PresentationLayer.UCFunction;
 
 namespace FastFood.PresentationLayer.UCSytem
 {
@@ -29,13 +30,13 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void btnQuanLyNguoiDung_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_UserManager"))
-            //{
-            //    UC_UserManager userManager = new UC_UserManager();
-            //    userManager.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(userManager);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_UserManager"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_UserManager"))
+            {
+                UC_UserManager userManager = new UC_UserManager();
+                userManager.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(userManager);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_UserManager"].BringToFront();
         }
 
         private void btnPhanQuyenNguoiDung_Click(object sender, EventArgs e)
@@ -60,14 +61,6 @@ namespace FastFood.PresentationLayer.UCSytem
             {
                 restoreDatabase.ShowDialog();
             }
-        }
-
-        private void btnThongTinCuaHang_Click(object sender, EventArgs e)
-        {
-            //using (frm_Setting setting = new frm_Setting())
-            //{
-            //    setting.ShowDialog();
-            //}
         }
     }
 }

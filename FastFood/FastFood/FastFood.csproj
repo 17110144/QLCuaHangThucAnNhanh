@@ -148,11 +148,53 @@
     <Compile Include="PresentationLayer\UCFunction\UC_FoodManager.Designer.cs">
       <DependentUpon>UC_FoodManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_NCCManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_NCCManager.Designer.cs">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_OfficeManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_OfficeManager.Designer.cs">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PayrollManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PayrollManager.Designer.cs">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PersonnelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_PersonnelManager.Designer.cs">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\UCFunction\UC_ProductType.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PresentationLayer\UCFunction\UC_ProductType.Designer.cs">
       <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_SalaryManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_SalaryManager.Designer.cs">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_TimeSheetManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_TimeSheetManager.Designer.cs">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_UserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_UserManager.Designer.cs">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\UCSytem\UC_Home.cs">
       <SubType>UserControl</SubType>
@@ -239,14 +281,41 @@
     <EmbeddedResource Include="PresentationLayer\UCFunction\UC_FoodManager.resx">
       <DependentUpon>UC_FoodManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_NCCManager.resx">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_OfficeManager.resx">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_PayrollManager.resx">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_PersonnelManager.resx">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCFunction\UC_ProductType.resx">
       <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_SalaryManager.resx">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_TimeSheetManager.resx">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_UserManager.resx">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Noti.resx">
       <DependentUpon>UC_Noti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Order.resx">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Personnel.resx">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Salary.resx">
       <DependentUpon>UC_Salary.cs</DependentUpon>
