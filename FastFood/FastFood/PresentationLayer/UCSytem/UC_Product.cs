@@ -20,13 +20,13 @@ namespace FastFood.PresentationLayer.UCSytem
         }
         private void btnQuanLyMonAn_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_FoodManager"))
-            //{
-            //    UC_FoodManager foodManager = new UC_FoodManager();
-            //    foodManager.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(foodManager);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_FoodManager"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_FoodManager"))
+            {
+                UC_FoodManager foodManager = new UC_FoodManager();
+                foodManager.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(foodManager);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_FoodManager"].BringToFront();
         }
 
         private void btnQuanLyNuocUong_Click(object sender, EventArgs e)
@@ -43,13 +43,13 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void btnQuanLySP_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_ProductType"))
-            //{
-            //    UC_ProductType productType = new UC_ProductType();
-            //    productType.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(productType);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_ProductType"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_ProductType"))
+            {
+                UC_ProductType productType = new UC_ProductType();
+                productType.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(productType);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_ProductType"].BringToFront();
         }
 
         private void btnQuanLyNCC_Click(object sender, EventArgs e)

@@ -142,6 +142,18 @@
     <Compile Include="PresentationLayer\UCFunction\UC_DrinkManager.Designer.cs">
       <DependentUpon>UC_DrinkManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_FoodManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_FoodManager.Designer.cs">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_ProductType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UCFunction\UC_ProductType.Designer.cs">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\UCSytem\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,6 +236,12 @@
     <EmbeddedResource Include="PresentationLayer\UCFunction\UC_DrinkManager.resx">
       <DependentUpon>UC_DrinkManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_FoodManager.resx">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UCFunction\UC_ProductType.resx">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UCSytem\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,9 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DBLayer\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\..\..\TK\KFC_FASTFOOD\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_20px.png" />

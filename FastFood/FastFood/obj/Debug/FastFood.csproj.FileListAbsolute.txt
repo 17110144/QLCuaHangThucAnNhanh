@@ -45,3 +45,5 @@ C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\o
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DrinkManager.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Noti.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Home.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_FoodManager.resources
+C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_ProductType.resources
