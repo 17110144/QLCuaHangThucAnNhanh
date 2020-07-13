@@ -70,3 +70,14 @@ D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\De
 D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.exe
 D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.pdb
 D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.CopyComplete
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_FoodManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_NCCManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_OfficeManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_PayrollManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_PersonnelManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_ProductType.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_SalaryManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_TimeSheetManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_UserManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Order.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Personnel.resources

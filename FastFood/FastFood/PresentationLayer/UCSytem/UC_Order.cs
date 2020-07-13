@@ -192,7 +192,7 @@ namespace FastFood.PresentationLayer.UCSytem
             lblTotalMoney.Text = "0,00" + " VND";
 
             btnDone.Enabled = false;
-            btnPrintInvoice.Enabled = false;
+      //      btnPrintInvoice.Enabled = false;
             btnCancel.Enabled = true;
 
             txtSearch.Focus();
@@ -218,7 +218,7 @@ namespace FastFood.PresentationLayer.UCSytem
                 lblTotalMoney.Text = "0,00" + " VND";
                 txtSearch.Focus();
                 //set lại button 
-                btnPrintInvoice.Enabled = false;
+      //          btnPrintInvoice.Enabled = false;
                 btnDone.Enabled = false;
                 btnCancel.Enabled = true;
             }

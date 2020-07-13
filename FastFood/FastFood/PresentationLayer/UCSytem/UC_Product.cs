@@ -20,13 +20,13 @@ namespace FastFood.PresentationLayer.UCSytem
         }
         private void btnQuanLyMonAn_Click(object sender, EventArgs e)
         {
-            //if (!frm_main.instance.pnlcontainer.controls.containskey("uc_foodmanager"))
-            //{
-            //    uc_foodmanager foodmanager = new uc_foodmanager();
-            //    foodmanager.dock = dockstyle.fill;
-            //    frm_main.instance.pnlcontainer.controls.add(foodmanager);
-            //}
-            //frm_main.instance.pnlcontainer.controls["uc_foodmanager"].bringtofront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_Foodmanger"))
+            {
+                UC_FoodManager foodmanager = new UC_FoodManager();
+                foodmanager.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(foodmanager);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_Foodmanager"].BringToFront();
         }
 
         private void btnQuanLyNuocUong_Click(object sender, EventArgs e)
@@ -43,24 +43,24 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void btnQuanLySP_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_ProductType"))
-            //{
-            //    UC_ProductType productType = new UC_ProductType();
-            //    productType.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(productType);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_ProductType"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_ProductType"))
+            {
+                UC_ProductType productType = new UC_ProductType();
+                productType.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(productType);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_ProductType"].BringToFront();
         }
 
         private void btnQuanLyNCC_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_NCCManager"))
-            //{
-            //    UC_NCCManager nCCManager = new UC_NCCManager();
-            //    nCCManager.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(nCCManager);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_NCCManager"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_NCCManager"))
+            {
+                UC_NCCManager nCCManager = new UC_NCCManager();
+                nCCManager.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(nCCManager);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_NCCManager"].BringToFront();
         }
     }
 }
