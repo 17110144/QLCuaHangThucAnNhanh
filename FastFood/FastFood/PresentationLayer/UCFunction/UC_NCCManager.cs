@@ -15,7 +15,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
     public partial class UC_NCCManager : UserControl
     {
-
+        cls_Product product = new cls_Product();
         public UC_NCCManager()
         {
             InitializeComponent();
@@ -67,15 +67,15 @@ namespace FastFood.PresentationLayer.UCFunction
 
                 if (result == DialogResult.Yes)
                 {
-                    DataTable dt = cls_Product._checkNCC(maNCC);
+                    DataTable dt = product.CheckNCC(maNCC);
                     if (dt.Rows.Count > 0)
                     {
                         MessageBox.Show("Vui lòng xóa sản phẩm trong DS sản phẩm trước khi xóa nhà cung cấp này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else if (cls_Product._delNCC(maNCC) == true)
+                    else if (product.DelNCC(maNCC) == true)
                     {
                         MessageBox.Show("Xóa thành công nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dtListNCC.DataSource = cls_Product._showDetailNCC();
+                        dtListNCC.DataSource = product.ShowDetailNCC();
                     }
                     else
                     {
@@ -95,13 +95,13 @@ namespace FastFood.PresentationLayer.UCFunction
                 }
                 else
                 {
-                    bool addNCC = cls_Product._addNCC(txtTenNCC.Text);
+                    bool addNCC = product.AddNCC(txtTenNCC.Text);
 
                     if (addNCC == true)
                     {
                         MessageBox.Show("Thêm nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, true, true, false, false, false);
-                        dtListNCC.DataSource = cls_Product._showDetailNCC();
+                        dtListNCC.DataSource = product.ShowDetailNCC();
                         txtTenNCC.Text = "";
                     }
                     else
@@ -122,12 +122,12 @@ namespace FastFood.PresentationLayer.UCFunction
                     int index = dtListNCC.CurrentCell.RowIndex;
                     idNCC = Convert.ToInt32(dtListNCC.Rows[index].Cells["NCCID"].Value);
 
-                    bool updateNCC = cls_Product._updateNCC(idNCC, txtTenNCC.Text);
+                    bool updateNCC = product.UpdateNCC(idNCC, txtTenNCC.Text);
                     if (updateNCC == true)
                     {
                         MessageBox.Show("Cập nhật thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, true, true, false, false, false);
-                        dtListNCC.DataSource = cls_Product._showDetailNCC();
+                        dtListNCC.DataSource = product.ShowDetailNCC();
                         txtTenNCC.Text = "";
                     }
                     else
@@ -153,7 +153,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void UC_NCCManager_Load(object sender, EventArgs e)
         {
-            dtListNCC.DataSource = cls_Product._showDetailNCC();
+            dtListNCC.DataSource = product.ShowDetailNCC();
             _sttButton(true, true, true, false, false, false);
             txtTenNCC.Text = "";
         }

@@ -40,14 +40,11 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.cmbNhanVien = new System.Windows.Forms.ComboBox();
-            this.cmbBoPhan = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSua = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dtList = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.TenBoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,16 +85,14 @@
             this.grpThongTin.Controls.Add(this.txtMatKhau);
             this.grpThongTin.Controls.Add(this.txtTenDangNhap);
             this.grpThongTin.Controls.Add(this.cmbNhanVien);
-            this.grpThongTin.Controls.Add(this.cmbBoPhan);
             this.grpThongTin.Controls.Add(this.label4);
             this.grpThongTin.Controls.Add(this.label2);
             this.grpThongTin.Controls.Add(this.label3);
-            this.grpThongTin.Controls.Add(this.label1);
             this.grpThongTin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.ForeColor = System.Drawing.Color.MidnightBlue;
             this.grpThongTin.Location = new System.Drawing.Point(23, 41);
             this.grpThongTin.Name = "grpThongTin";
-            this.grpThongTin.Size = new System.Drawing.Size(850, 173);
+            this.grpThongTin.Size = new System.Drawing.Size(850, 138);
             this.grpThongTin.TabIndex = 72;
             this.grpThongTin.TabStop = false;
             this.grpThongTin.Text = "Thông tin";
@@ -107,7 +102,7 @@
             this.cbQuanTri.AutoSize = true;
             this.cbQuanTri.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbQuanTri.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbQuanTri.Location = new System.Drawing.Point(65, 130);
+            this.cbQuanTri.Location = new System.Drawing.Point(455, 40);
             this.cbQuanTri.Name = "cbQuanTri";
             this.cbQuanTri.Size = new System.Drawing.Size(81, 24);
             this.cbQuanTri.TabIndex = 74;
@@ -137,21 +132,11 @@
             this.cmbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNhanVien.FormattingEnabled = true;
-            this.cmbNhanVien.Location = new System.Drawing.Point(540, 39);
+            this.cmbNhanVien.Location = new System.Drawing.Point(174, 38);
             this.cmbNhanVien.Name = "cmbNhanVien";
             this.cmbNhanVien.Size = new System.Drawing.Size(234, 28);
             this.cmbNhanVien.TabIndex = 72;
-            // 
-            // cmbBoPhan
-            // 
-            this.cmbBoPhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoPhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoPhan.FormattingEnabled = true;
-            this.cmbBoPhan.Location = new System.Drawing.Point(174, 36);
-            this.cmbBoPhan.Name = "cmbBoPhan";
-            this.cmbBoPhan.Size = new System.Drawing.Size(234, 28);
-            this.cmbBoPhan.TabIndex = 72;
-            this.cmbBoPhan.SelectedIndexChanged += new System.EventHandler(this.cmbBoPhan_SelectedIndexChanged);
+            this.cmbNhanVien.SelectedIndexChanged += new System.EventHandler(this.cmbNhanVien_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -177,21 +162,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(451, 39);
+            this.label3.Location = new System.Drawing.Point(70, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nhân viên";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Bộ phận";
             // 
             // btnSua
             // 
@@ -215,7 +190,7 @@
             this.btnSua.IconVisible = true;
             this.btnSua.IconZoom = 90D;
             this.btnSua.IsTab = false;
-            this.btnSua.Location = new System.Drawing.Point(246, 220);
+            this.btnSua.Location = new System.Drawing.Point(247, 185);
             this.btnSua.Name = "btnSua";
             this.btnSua.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnSua.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
@@ -250,7 +225,6 @@
             this.dtList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtList.ColumnHeadersHeight = 50;
             this.dtList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenBoPhan,
             this.MaNV,
             this.TenNV,
             this.TenDangNhap,
@@ -291,16 +265,9 @@
             this.dtList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dtList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtList.Size = new System.Drawing.Size(838, 312);
+            this.dtList.Size = new System.Drawing.Size(838, 347);
             this.dtList.TabIndex = 1;
             this.dtList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtList_CellClick);
-            // 
-            // TenBoPhan
-            // 
-            this.TenBoPhan.DataPropertyName = "TenBoPhan";
-            this.TenBoPhan.HeaderText = "Bộ phận";
-            this.TenBoPhan.Name = "TenBoPhan";
-            this.TenBoPhan.ReadOnly = true;
             // 
             // MaNV
             // 
@@ -370,9 +337,9 @@
             this.grpDanhSach.Controls.Add(this.dtList);
             this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.grpDanhSach.Location = new System.Drawing.Point(23, 270);
+            this.grpDanhSach.Location = new System.Drawing.Point(23, 235);
             this.grpDanhSach.Name = "grpDanhSach";
-            this.grpDanhSach.Size = new System.Drawing.Size(850, 346);
+            this.grpDanhSach.Size = new System.Drawing.Size(850, 381);
             this.grpDanhSach.TabIndex = 84;
             this.grpDanhSach.TabStop = false;
             this.grpDanhSach.Text = "Danh sách người dùng";
@@ -399,7 +366,7 @@
             this.btnHuyBo.IconVisible = true;
             this.btnHuyBo.IconZoom = 90D;
             this.btnHuyBo.IsTab = false;
-            this.btnHuyBo.Location = new System.Drawing.Point(640, 220);
+            this.btnHuyBo.Location = new System.Drawing.Point(641, 185);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnHuyBo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
@@ -435,7 +402,7 @@
             this.btnCapNhat.IconVisible = true;
             this.btnCapNhat.IconZoom = 90D;
             this.btnCapNhat.IsTab = false;
-            this.btnCapNhat.Location = new System.Drawing.Point(509, 220);
+            this.btnCapNhat.Location = new System.Drawing.Point(510, 185);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnCapNhat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
@@ -471,7 +438,7 @@
             this.btnXoa.IconVisible = true;
             this.btnXoa.IconZoom = 90D;
             this.btnXoa.IsTab = false;
-            this.btnXoa.Location = new System.Drawing.Point(378, 220);
+            this.btnXoa.Location = new System.Drawing.Point(379, 185);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnXoa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
@@ -507,7 +474,7 @@
             this.btnThem.IconVisible = true;
             this.btnThem.IconZoom = 90D;
             this.btnThem.IsTab = false;
-            this.btnThem.Location = new System.Drawing.Point(115, 220);
+            this.btnThem.Location = new System.Drawing.Point(116, 185);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
@@ -586,8 +553,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCapNhat;
         private Bunifu.Framework.UI.BunifuFlatButton btnXoa;
         private Bunifu.Framework.UI.BunifuFlatButton btnThem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbBoPhan;
         private System.Windows.Forms.CheckBox cbQuanTri;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtTenDangNhap;
@@ -595,7 +560,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenBoPhan;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
@@ -604,7 +570,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NguoiDungID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoPhanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienID;
-        private System.Windows.Forms.ErrorProvider errorProvider;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

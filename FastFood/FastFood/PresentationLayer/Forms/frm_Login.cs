@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using FastFood.BusinessLayer;
 
 namespace FastFood.Forms
 {
     public partial class frm_Login : Form
     {
+        cls_Employess employess = new cls_Employess();
         public frm_Login()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace FastFood.Forms
         {
 
             string password = txtPassword.Text;
-            string NguoiDungID = BusinessLayer.cls_Employess._checkLogin(txtTenDangNhap.Text, password);
+            string NguoiDungID = employess.CheckLogin(txtTenDangNhap.Text, password);
 
             if (NguoiDungID != "ERROR")
             {

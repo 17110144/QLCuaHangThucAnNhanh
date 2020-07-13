@@ -16,6 +16,8 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_PersonnelManager : UserControl
     {
+        cls_Employess employess = new cls_Employess();
+        cls_Salary salary = new cls_Salary();
         private int check = 0;
         private int nhanvienID = 0;
         public UC_PersonnelManager()
@@ -73,7 +75,7 @@ namespace FastFood.PresentationLayer.UCFunction
              */
             DataTable dt = new DataTable();
             //hàm get cột MaNV
-            dt = cls_Employess._getIDEmployess();
+            dt = employess.GetIDEmployess();
             // tạo temp để lưu số thứ tự của mã nv
             int temp = 0;
             //nếu danh sánh nv rỗng
@@ -122,25 +124,21 @@ namespace FastFood.PresentationLayer.UCFunction
         private List<string> _checkAvailable(int id)
         {
             List<string> msg = new List<string>();
-            if (!cls_Employess._checkInNguoiDung(id))
+            if (!employess.CheckInNguoiDung(id))
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Người Dùng trước khi xóa nhân viên.");
             }
-            if (!cls_Employess._checkInHoSoNhanVien(id))
-            {
-                msg.Add("Vui lòng xóa nhân viên này trong Hồ Sơ Nhân Viên trước khi xóa nhân viên.");
-            }
-            if (!cls_Employess._checkInNhanVienBoPhan(id))
-            {
-                msg.Add("Vui lòng xóa nhân viên này trong Bộ Phận trước khi xóa nhân viên.");
-            }
-            if (!cls_Employess._checkInNhanVienChucDanh(id))
+            if (!employess.CheckInNhanVienChucDanh(id))
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Chức Danh trước khi xóa nhân viên.");
             }
-            if (!cls_Employess._checkInHoaDon(id))
+            if (!employess.CheckInHoaDon(id))
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Hóa Đơn trước khi xóa nhân viên.");
+            }
+            if (!salary.CheckChamCong(id))
+            {
+                msg.Add("Nhân viên tồn tại trong bảng chấm công. Không thể xoá nhân viên.");
             }
             return msg;
         }
@@ -149,31 +147,58 @@ namespace FastFood.PresentationLayer.UCFunction
             /*
              * Gets or sets a value that indicates whether controls in this container will be automatically validated when the focus changes.
              * An AutoValidate enumerated value that indicates whether contained controls are implicitly validated on focus change. The default is Inherit.
-             * Source: https://doc.microsoft.com
+             * Source: https://doc.microsoft.Com
              */
             this.AutoValidate = AutoValidate.EnableAllowFocusChange;
-            cmbGioiTinh.DataSource = cls_Employess._getGender();
-            cmbGioiTinh.ValueMember = "GioiTinhID";
-            cmbGioiTinh.DisplayMember = "GioiTinh";
+            //cmbGioiTinh.DataSource = employess.GetGender();
             dtListEmployess.AutoGenerateColumns = false;
-            dtListEmployess.DataSource = cls_Employess._showEmployess();
+            dtListEmployess.DataSource = employess.ShowEmployess();
             _formatDT();
             _reset();
             _sttButton(true, true, true, false, false, false);
+
+            //cmbGioiTinh.ValueMember = dtListEmployess;
+            //cmbGioiTinh.DisplayMember = "GioiTinh";
+            //cmbGioiTinh.ValueMember = 
+            //Object[] obj = new Object[2];
+            //obj[0] = new { display = "Nam", value = true };
+            //obj[1] = new { display = "Nữ", value = false };
+            //cmbGioiTinh.DataSource = obj;
+            //cmbGioiTinh.DisplayMember = "display";
+            //cmbGioiTinh.ValueMember = "value";
+
+            // Dictionary<string, string> test = new Dictionary<string, string>();
+            // test.Add("True", "Nam");
+            // test.Add("False", "Nữ");
+            //// test.Add("3", "dfdfdf");
+            // cmbGioiTinh.DataSource = new BindingSource(test, null);
+            // cmbGioiTinh.DisplayMember = "Value";
+            // cmbGioiTinh.ValueMember = "Key";
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Key", typeof(string));
+            dataTable.Columns.Add("Value", typeof(string));
+            dataTable.Rows.Add("False", "Nữ");
+            dataTable.Rows.Add("True", "Nam");
+            cmbGioiTinh.DataSource = dataTable;
+            cmbGioiTinh.DisplayMember = "Value";
+            cmbGioiTinh.ValueMember = "Key";
+            //  cmbGioiTinh.
+            // cmbGioiTinh.ValueMember = 
 
             cmbFilter.ValueMember = "Value";
             cmbFilter.DisplayMember = "Text";
             var items = new[] {
                 new { Text = "Tên NV", Value = "TenNV" },
                 new { Text = "Số CMND", Value = "CMND" },
-                new { Text = "Số điện thoại", Value = "SDT" }
+                new { Text = "Số điện thoại", Value = "SDT" },
+               // new {Text = "Giới tính", Value = "GioiTinh"}
             };
             cmbFilter.DataSource = items;
         }
 
         private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            dtListEmployess.DataSource = cls_Employess._searchEmployess(txtTimKiem.Text, cmbFilter.SelectedValue.ToString());
+            dtListEmployess.DataSource = employess.SearchEmployess(txtTimKiem.Text, cmbFilter.SelectedValue.ToString());
             _formatDT();
         }
 
@@ -213,7 +238,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 txtDiaChi.Text = dtListEmployess.Rows[index].Cells["DiaChi"].Value.ToString();
                 txtEmail.Text = dtListEmployess.Rows[index].Cells["Email"].Value.ToString();
                 txtSDT.Text = dtListEmployess.Rows[index].Cells["SDT"].Value.ToString();
-                cmbGioiTinh.SelectedValue = Convert.ToBoolean(dtListEmployess.Rows[index].Cells["GioiTinhID"].Value.ToString());
+                cmbGioiTinh.SelectedValue = dtListEmployess.Rows[index].Cells["GioiTinh"].Value.ToString();
                 cbDiLam.Checked = Convert.ToBoolean(dtListEmployess.Rows[index].Cells["TrangThaiID"].Value.ToString());
             }
         }
@@ -233,7 +258,7 @@ namespace FastFood.PresentationLayer.UCFunction
             else
             {
                 int index = dtListEmployess.CurrentCell.RowIndex;
-                int id = Convert.ToInt32(dtListEmployess.Rows[index].Cells["MaNV"].Value);
+                int id = Convert.ToInt32(dtListEmployess.Rows[index].Cells[0].Value);
 
                 DialogResult result = MessageBox.Show("Bạn muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -245,10 +270,10 @@ namespace FastFood.PresentationLayer.UCFunction
                     }
                     else
                     {
-                        if (cls_Employess._delEmployess(id))
+                        if (employess.DelEmployess(id))
                         {
                             MessageBox.Show("Đã xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            dtListEmployess.DataSource = cls_Employess._showEmployess();
+                            dtListEmployess.DataSource = employess.ShowEmployess();
                             _formatDT();
                         }
                         else
@@ -278,7 +303,12 @@ namespace FastFood.PresentationLayer.UCFunction
                 {
                     string genMaNV = _genIdEmployess();
                     string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-                    bool addEmployess = cls_Employess._addEmployess(genMaNV, txtTenNV.Text, dob, Convert.ToInt32(cmbGioiTinh.SelectedValue), txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
+                    int gender;
+                    if (cmbGioiTinh.SelectedValue.ToString() == "False")
+                        gender = 0;
+                    else
+                        gender = 1;
+                    bool addEmployess = employess.AddEmployess(genMaNV, txtTenNV.Text, dob, gender, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
 
                     if (addEmployess == true)
                     {
@@ -286,7 +316,7 @@ namespace FastFood.PresentationLayer.UCFunction
                         _reset();
                         _sttButton(true, true, true, false, false, false);
                         _formatDT();
-                        dtListEmployess.DataSource = cls_Employess._showEmployess();
+                        dtListEmployess.DataSource = employess.ShowEmployess();
                         txtTimKiem.Focus();
                     }
                     else
@@ -297,12 +327,18 @@ namespace FastFood.PresentationLayer.UCFunction
                 else
                 {
                     string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-                    bool updateEmployess = cls_Employess._updateEmployess(nhanvienID, txtMaNV.Text, txtTenNV.Text, dob, Convert.ToInt32(cmbGioiTinh.SelectedValue), txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
+                    int gender;
+                    if (cmbGioiTinh.SelectedValue.ToString() == "False")
+                        gender = 0;
+                    else
+                        gender = 1;
+
+                    bool updateEmployess = employess.UpdateEmployess(nhanvienID, txtMaNV.Text, txtTenNV.Text, dob, gender, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
 
                     if (updateEmployess == true)
                     {
                         MessageBox.Show("Cập nhật thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dtListEmployess.DataSource = cls_Employess._showEmployess();
+                        dtListEmployess.DataSource = employess.ShowEmployess();
                         _reset();
                         _formatDT();
                         _sttButton(true, true, true, false, false, false);
@@ -382,7 +418,7 @@ namespace FastFood.PresentationLayer.UCFunction
             }
             else if (!regex.IsMatch(txtEmail.Text))
             {
-                errorProvider.SetError(txtEmail, "Email không đúng định dạng example@domain.com.");
+                errorProvider.SetError(txtEmail, "Email không đúng định dạng example@domain.Com.");
                 e.Cancel = true;
             }
             else
@@ -413,6 +449,68 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 errorProvider.SetError(txtSDT, "");
             }
+        }
+
+        private void dtListEmployess_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dtListEmployess.CurrentCell.RowIndex;
+
+            txtMaNV.Text = dtListEmployess.Rows[r].Cells[1].Value.ToString();
+            txtTenNV.Text = dtListEmployess.Rows[r].Cells[2].Value.ToString();
+            //string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+            dtpNgaySinh.Value.ToString(dtListEmployess.Rows[r].Cells[3].Value.ToString());
+            txtCMND.Text = dtListEmployess.Rows[r].Cells[4].Value.ToString();
+            txtDiaChi.Text = dtListEmployess.Rows[r].Cells[5].Value.ToString();
+            txtEmail.Text = dtListEmployess.Rows[r].Cells[6].Value.ToString();
+            txtSDT.Text = dtListEmployess.Rows[r].Cells[7].Value.ToString();
+
+            if (dtListEmployess.Rows[r].Cells[8].Value.ToString() == "True")
+            {
+                cmbGioiTinh.SelectedIndex = 1;
+
+                //cmbGioiTinh.ValueMember = "True";
+            }
+            else
+            {
+                //cmbGioiTinh.DisplayMember = "Nữ";
+                cmbGioiTinh.SelectedIndex = 0;
+                //   cmbGioiTinh.ValueMember = "False";
+            }
+            cbDiLam.Checked = Convert.ToBoolean(dtListEmployess.Rows[9].Cells["TrangThaiID"].Value.ToString());
+            //  DataSet tendanhMuc = danhMuc.Find(dtListEmployess.Rows[r].Cells[8].Value.ToString());
+
+            //cbbDanhMuc.Text = dtListEmployess.Rows[r].Cells[8].Value.ToString();
+        }
+
+        private void dtListEmployess_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dtListEmployess.CurrentCell.RowIndex;
+
+            txtMaNV.Text = dtListEmployess.Rows[r].Cells[1].Value.ToString();
+            txtTenNV.Text = dtListEmployess.Rows[r].Cells[2].Value.ToString();
+            //string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+            dtpNgaySinh.Value.ToString(dtListEmployess.Rows[r].Cells[3].Value.ToString());
+            txtCMND.Text = dtListEmployess.Rows[r].Cells[4].Value.ToString();
+            txtDiaChi.Text = dtListEmployess.Rows[r].Cells[5].Value.ToString();
+            txtEmail.Text = dtListEmployess.Rows[r].Cells[6].Value.ToString();
+            txtSDT.Text = dtListEmployess.Rows[r].Cells[7].Value.ToString();
+
+            if (dtListEmployess.Rows[r].Cells[8].Value.ToString() == "True")
+            {
+                cmbGioiTinh.SelectedIndex = 1;
+
+                //cmbGioiTinh.ValueMember = "True";
+            }
+            else
+            {
+                //cmbGioiTinh.DisplayMember = "Nữ";
+                cmbGioiTinh.SelectedIndex = 0;
+                //   cmbGioiTinh.ValueMember = "False";
+            }
+            cbDiLam.Checked = Convert.ToBoolean(dtListEmployess.Rows[9].Cells["TrangThaiID"].Value.ToString());
+            //  DataSet tendanhMuc = danhMuc.Find(dtListEmployess.Rows[r].Cells[8].Value.ToString());
+
+            //cbbDanhMuc.Text = dtListEmployess.Rows[r].Cells[8].Value.ToString();
         }
     }
 }

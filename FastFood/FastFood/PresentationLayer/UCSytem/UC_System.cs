@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFood.Forms;
-using FastFood.PresentationLayer.Forms;
 using FastFood.PresentationLayer.UCFunction;
 
 namespace FastFood.PresentationLayer.UCSytem
@@ -44,22 +43,6 @@ namespace FastFood.PresentationLayer.UCSytem
             using (frm_UserPermission userPermission = new frm_UserPermission())
             {
                 userPermission.ShowDialog();
-            }
-        }
-
-        private void btnSaoluuDuLieu_Click(object sender, EventArgs e)
-        {
-            using (frm_BackupDatabase backupDatabase = new frm_BackupDatabase())
-            {
-                backupDatabase.ShowDialog();
-            }
-        }
-
-        private void btnPhucHoiDuLieu_Click(object sender, EventArgs e)
-        {
-            using (frm_RestoreDatabase restoreDatabase = new frm_RestoreDatabase())
-            {
-                restoreDatabase.ShowDialog();
             }
         }
     }

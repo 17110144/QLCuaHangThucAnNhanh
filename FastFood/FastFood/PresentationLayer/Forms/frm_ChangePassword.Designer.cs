@@ -264,7 +264,6 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.pictureBox1.Image = global::FastFood.Properties.Resources.password_120px;
             this.pictureBox1.Location = new System.Drawing.Point(24, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 119);

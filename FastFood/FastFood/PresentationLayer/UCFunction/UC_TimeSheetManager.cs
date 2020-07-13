@@ -65,8 +65,8 @@ namespace FastFood.PresentationLayer.UCFunction
 
                     if (ChamCongID == "")
                     {
-                        bool _insertChamCong = salary.InsertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
-                        if (_insertChamCong)
+                        bool InsertChamCong = salary.InsertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
+                        if (InsertChamCong)
                         {
                             flag++;
                         }
@@ -75,8 +75,8 @@ namespace FastFood.PresentationLayer.UCFunction
                     {
                         if (TrangThai == "1")
                         {
-                            bool _updateChamCong = salary.UpdateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
-                            if (_updateChamCong)
+                            bool UpdateChamCong = salary.UpdateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
+                            if (UpdateChamCong)
                             {
                                 flag++;
                             }
@@ -116,8 +116,8 @@ namespace FastFood.PresentationLayer.UCFunction
                             int NgayCongChuan = Convert.ToInt32(row.Cells["NgayCongChuan"].Value);
                             int NgayTinhLuong = Convert.ToInt32(row.Cells["NgayTinhLuong"].Value);
 
-                            bool _insertChiTietLuong = salary.InsertChiTietLuong(ThangKeLuong, NhanVienID, NgayCongChuan, NgayTinhLuong);
-                            if (_insertChiTietLuong)
+                            bool InsertChiTietLuong = salary.InsertChiTietLuong(ThangKeLuong, NhanVienID, NgayCongChuan, NgayTinhLuong);
+                            if (InsertChiTietLuong)
                             {
                                 flag++;
                             }

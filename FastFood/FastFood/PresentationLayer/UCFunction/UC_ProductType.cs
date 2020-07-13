@@ -14,6 +14,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_ProductType : UserControl
     {
+        cls_Product product = new cls_Product();
         public UC_ProductType()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void UC_ProductType_Load(object sender, EventArgs e)
         {
-            dtListProductType.DataSource = cls_Product._showProductType();
+            dtListProductType.DataSource = product.ShowProductType();
             _sttButton(false, true, false, false, false, false);
         }
 
@@ -66,11 +67,11 @@ namespace FastFood.PresentationLayer.UCFunction
                 int loaiSPID;
                 int index = dtListProductType.CurrentCell.RowIndex;
                 loaiSPID = Convert.ToInt32(dtListProductType.Rows[index].Cells["LoaiSPID"].Value);
-                bool updateProductType = cls_Product._updateProductType(loaiSPID, txtLoaiSanPham.Text);
+                bool updateProductType = product.UpdateProductType(loaiSPID, txtLoaiSanPham.Text);
                 if (updateProductType == true)
                 {
                     MessageBox.Show("Cập nhật thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dtListProductType.DataSource = cls_Product._showProductType();
+                    dtListProductType.DataSource = product.ShowProductType();
                     _sttButton(false, true, false, false, false, false);
                     txtLoaiSanPham.Text = "";
                 }

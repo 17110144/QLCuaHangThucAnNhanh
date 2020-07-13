@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastFood.PresentationLayer.UCSytem;
 using FastFood.Forms;
+using FastFood.BusinessLayer;
 
 namespace FastFood.Forms
 {
     public partial class frm_Main : Form
     {
         public static string NguoiDungID;
-
+        cls_Employess employess = new cls_Employess();
         bool checkPer;
 
         static frm_Main _obj;
@@ -31,14 +32,14 @@ namespace FastFood.Forms
         {
             InitializeComponent();
 
-            //addControlsToPanel(_Home);
-            //NguoiDungID = NguoiDungID_Login;
+            addControlsToPanel(_Home);
+            NguoiDungID = NguoiDungID_Login;
 
-            //_Order.Visible = false;
-            //_Personnel.Visible = false;
-            //_Product.Visible = false;
-            //_Salary.Visible = false;
-            //_System.Visible = false;
+            _Order.Visible = false;
+            _Personnel.Visible = false;
+            _Product.Visible = false;
+            _Salary.Visible = false;
+            _System.Visible = false;
         }
 
         public static frm_Main Instance
@@ -166,10 +167,7 @@ namespace FastFood.Forms
 
         private void lblInfo_Click(object sender, EventArgs e)
         {
-            using (frm_About about = new frm_About())
-            {
-                about.ShowDialog();
-            }
+           
         }
 
         private void frm_Main_Load(object sender, EventArgs e)
@@ -180,12 +178,12 @@ namespace FastFood.Forms
 
         private void _loadPermission()
         {
-          bool   checkedPer = true;
-          //  checkPer = (BusinessLayer.cls_Employess._checkPermission(NguoiDungID) == true) ? true : false;
+            //bool   checkedPer = true;
+            checkPer = (employess.CheckPermission(NguoiDungID) == true) ? true : false;
 
             if (checkPer == false)
             {
-                DataTable dt = BusinessLayer.cls_Employess._ListPermission(NguoiDungID);
+                DataTable dt = employess.ListPermission(NguoiDungID);
                 foreach (DataRow dr in dt.Rows)
                 {
                     switch (dr["URL"].ToString())

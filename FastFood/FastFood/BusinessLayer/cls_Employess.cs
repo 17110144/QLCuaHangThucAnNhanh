@@ -11,21 +11,21 @@ namespace FastFood.BusinessLayer
 {
     class cls_Employess
     {
-        public static string _checkLogin(string username, string password)
+        public string CheckLogin(string username, string password)
         {
             string NguoiDungID = null;
             string query = string.Format("SELECT NguoiDungID FROM tbl_NguoiDung WHERE TenDangNhap = '{0}' and MatKhau = '{1}'", username, password);
             DataTable dt = cls_Database.TableRead(query);
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 NguoiDungID = dt.Rows[0]["NguoiDungID"].ToString();
                 return NguoiDungID;
             }
-            
+
             return "ERROR";
         }
 
-        public static bool _checkPermission(string id)
+        public bool CheckPermission(string id)
         {
             string query = string.Format("SELECT QuanTri FROM tbl_NguoiDung WHERE NguoiDungID = '{0}'", id);
             DataTable dt = cls_Database.TableRead(query);
@@ -36,13 +36,13 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static DataTable _ListPermission(string id)
+        public DataTable ListPermission(string id)
         {
             string query = string.Format("SELECT a.NguoiDungID, a.NghiepVuID, b.URL FROM tbl_QuyenNguoiDung a JOIN tbl_NghiepVu b ON b.NghiepVuID = a.NghiepVuID WHERE NguoiDungID = '{0}'", id);
             return cls_Database.TableRead(query);
         }
 
-        public static string[] _getInfoEmployess(string id)
+        public string[] GetInfoEmployess(string id)
         {
             string[] info = new string[2];
             string query = string.Format("SELECT a.NhanVienID, a.TenNV FROM tbl_NhanVien a JOIN tbl_NguoiDung b ON b.NhanVienID = a.NhanVienID WHERE NguoiDungID = '{0}'", id);
@@ -51,38 +51,70 @@ namespace FastFood.BusinessLayer
             info[1] = dt.Rows[0]["TenNV"].ToString();
             return info;
         }
-          
-        public static DataTable _getGender()
+
+        public DataTable GetGender()
         {
-            string query = "SELECT * FROM tbl_GioiTinh";
+            string query = "SELECT * FROM tblGioiTinh";
             return cls_Database.TableRead(query);
         }
-        
-        public static DataTable _showEmployess()
+
+        public DataTable ShowEmployess()
         {
-            string query = "SELECT a.NhanVienID, a.MaNV, a.TenNV, a.NgaySinh , a.CMND, a.DiaChi , a.Email , a.SDT, b.GioiTinh, b.GioiTinhID, a.TrangThaiID FROM tbl_NhanVien a inner join tbl_GioiTinh b on a.GioiTinhID = b.GioiTinhID ORDER BY a.MaNV ASC";
+            string query = "SELECT * from tbl_NhanVien";
             return cls_Database.TableRead(query);
         }
-        public static DataTable _searchEmployess(string name, string tbl)
+        public DataTable SearchEmployess(string name, string tbl)
         {
-            string query = string.Format("SELECT  a.NhanVienID, a.MaNV, a.TenNV, a.NgaySinh , a.CMND, a.DiaChi , a.Email , a.SDT, b.GioiTinh, a.TrangThaiID FROM tbl_NhanVien a inner join tbl_GioiTinh b on a.GioiTinhID = b.GioiTinhID  WHERE a.{0} LIKE N'{1}%' OR a.{0} LIKE N'%{1}%' OR  a.{0} LIKE N'%{1}'", tbl, name);
+            string query = string.Format("SELECT  a.NhanVienID, a.MaNV, a.TenNV, a.NgaySinh , a.CMND, a.DiaChi , a.Email , a.SDT, b.GioiTinh, a.TrangThaiID FROM tbl_NhanVien a inner join tblGioiTinh b on a.GioiTinhID = b.GioiTinhID  WHERE a.{0} LIKE N'{1}%' OR a.{0} LIKE N'%{1}%' OR  a.{0} LIKE N'%{1}'", tbl, name);
             return cls_Database.TableRead(query);
         }
-        public static bool _addEmployess(string maNV, string tenNV, string ngaySinh, int gioiTinhID, string diaChi, string sdt, string email, string cmnd, int trangthaiID)
+        public bool AddEmployess(string maNV, string tenNV, string ngaySinh, int gioiTinhID, string diaChi, string sdt, string email, string cmnd, int trangthaiID)
         {
             try
             {
-                string query = string.Format("INSERT INTO tbl_NhanVien(MaNV, TenNV, NgaySinh, GioiTinhID, DiaChi, SDT, Email, CMND, TrangThaiID) VALUES ('{0}', N'{1}', '{2}', {3}, N'{4}', '{5}', '{6}', '{7}', {8})", maNV, tenNV, ngaySinh, gioiTinhID, diaChi, sdt, email, cmnd, trangthaiID);
+                string query = string.Format("INSERT INTO tbl_NhanVien(MaNV, TenNV, NgaySinh, GioiTinh, DiaChi, SDT, Email, CMND, TrangThaiID) VALUES ('{0}', N'{1}', '{2}', {3}, N'{4}', '{5}', '{6}', '{7}', {8})", maNV, tenNV, ngaySinh, gioiTinhID, diaChi, sdt, email, cmnd, trangthaiID);
                 cls_Database.AED(query);
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
         }
+        public DataTable GetAllUserName()
+        {
+            string query = string.Format(@"SELECT a.NguoiDungID, a.TenDangNhap 
+                                        FROM tbl_NguoiDung a 
+                                        INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID");
+            DataTable dt = cls_Database.TableRead(query);
+            return dt;
+        }
+        public DataTable GetAllEmpName()
+        {
+            string query = string.Format(@"SELECT a.NguoiDungID, b.TenNV 
+                                        FROM tbl_NguoiDung a 
+                                        INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID");
+            DataTable dt = cls_Database.TableRead(query);
+            return dt;
+        }
 
-        public static bool _delEmployess(int nhanVienID)
+        public DataTable GetUserPermission()
+        {
+            string query = @"SELECT a.NguoiDungID, b.NhanVienID,  b.MaNV, b.TenNV, a.TenDangNhap, a.MatKhau, a.QuanTri 
+                            FROM tbl_NguoiDung a
+                            INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID";
+            return cls_Database.TableRead(query);
+        }
+
+        public DataTable GetUserByID(int NhanVienID)
+        {
+            string query = string.Format(@"SELECT a.NguoiDungID, a.TenDangNhap 
+                                        FROM tbl_NguoiDung a 
+                                        INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID and b.NhanVienID = {0}", NhanVienID);
+            DataTable dt = cls_Database.TableRead(query);
+            return dt;
+        }
+        public bool DelEmployess(int nhanVienID)
         {
             try
             {
@@ -96,7 +128,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _checkInHoSoNhanVien(int nhanvienID)
+        public bool CheckInHoSoNhanVien(int nhanvienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_HoSoNhanVien WHERE NhanVienID = {0}", nhanvienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -107,7 +139,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _checkInNhanVienBoPhan(int nhanvienID)
+        public bool CheckInNhanVienBoPhan(int nhanvienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_NhanVienBoPhan WHERE NhanVienID = {0}", nhanvienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -117,7 +149,7 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
-        public static bool _checkInNhanVienChucDanh(int nhanvienID)
+        public bool CheckInNhanVienChucDanh(int nhanvienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_NhanVienChucDanh WHERE NhanVienID = {0}", nhanvienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -127,7 +159,7 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
-        public static bool _checkInNguoiDung(int nhanvienID)
+        public bool CheckInNguoiDung(int nhanvienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_NguoiDung WHERE NhanVienID = {0}", nhanvienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -137,7 +169,7 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
-        public static bool _checkInHoaDon(int nhanvienID)
+        public bool CheckInHoaDon(int nhanvienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_HoaDon WHERE NhanVienID = {0}", nhanvienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -147,58 +179,59 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
-        public static DataTable _getIDEmployess()
+        public DataTable GetIDEmployess()
         {
             string query = "SELECT MaNV FROM tbl_NhanVien";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
 
-        public static bool _updateEmployess(int nhavienID, string maNV, string tenNV, string ngaySinh, int gioiTinhID, string diaChi, string sdt, string email, string cmnd, int trangthaiID)
+        public bool UpdateEmployess(int nhavienID, string maNV, string tenNV, string ngaySinh, int gioiTinhID, string diaChi, string sdt, string email, string cmnd, int trangthaiID)
         {
             try
             {
-                string query = string.Format("UPDATE tbl_NhanVien SET MaNV = '{0}', TenNV = N'{1}', NgaySinh = '{2}', GioiTinhID = {3}, DiaChi = N'{4}', SDT = '{5}', Email = '{6}', CMND = '{7}', TrangThaiID = {8} WHERE NhanVienID = {9}", maNV, tenNV, ngaySinh, gioiTinhID, diaChi, sdt, email, cmnd, trangthaiID, nhavienID);
+                string query = string.Format("UPDATE tbl_NhanVien SET MaNV = '{0}', TenNV = N'{1}', NgaySinh = '{2}', GioiTinh = {3}, DiaChi = N'{4}', SDT = '{5}', Email = '{6}', CMND = '{7}', TrangThaiID = {8} WHERE NhanVienID = {9}", maNV, tenNV, ngaySinh, gioiTinhID, diaChi, sdt, email, cmnd, trangthaiID, nhavienID);
                 cls_Database.AED(query);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
 
-        public static DataTable _getProfileName()
+        public DataTable GetProfileName()
         {
             string query = "SELECT NhanVienID, TenNV FROM tbl_NhanVien";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static DataTable _getProfileNation()
+        public DataTable GetProfileNation()
         {
             string query = "SELECT * FROM tbl_DanToc";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static DataTable _getProfileCity()
+        public DataTable GetProfileCity()
         {
             string query = "SELECT * FROM tbl_TinhThanh";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static DataTable _getProfileReligion()
+        public DataTable GetProfileReligion()
         {
             string query = "SELECT * FROM tbl_TonGiao";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static DataTable _getProfileDiploma()
+        public DataTable GetProfileDiploma()
         {
             string query = "SELECT * FROM tbl_BangCap";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static DataTable _showProfileInfo()
+        public DataTable ShowProfileInfo()
         {
             string query = @"SELECT b.NhanVienID, b.TenNV, a.NgayVaoLam,  c.TenDanToc, c.DanTocID, d.TenTonGiao, d.TonGiaoID, f.TenTinhThanh, f.TinhThanhID, e.TenBangCap, e.BangCapID, a.GhiChu, a.ImagePath
                                 FROM tbl_HoSoNhanVien a 
@@ -210,7 +243,7 @@ namespace FastFood.BusinessLayer
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static bool _addProfile(int nhanvienID, string ngayVaoLam, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID, string ghiChu, string path)
+        public bool AddProfile(int nhanvienID, string ngayVaoLam, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID, string ghiChu, string path)
         {
             try
             {
@@ -223,7 +256,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _checkProfile(int nhanVienID)
+        public bool CheckProfile(int nhanVienID)
         {
             string query = string.Format("SELECT * FROM tbl_HoSoNhanVien WHERE NhanVienID = {0}", nhanVienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -234,7 +267,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _updateProfile(int nhanvienID, string ngayVaoLam, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID, string ghiChu, string path)
+        public bool UpdateProfile(int nhanvienID, string ngayVaoLam, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID, string ghiChu, string path)
         {
             try
             {
@@ -247,7 +280,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _delProfile(int nhanvienID, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID)
+        public bool DelProfile(int nhanvienID, int danTocID, int tonGiaoID, int tinhThanhID, int bangCapID)
         {
             try
             {
@@ -261,20 +294,20 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getDeparment()
-        {
-            string query = "SELECT * FROM tbl_BoPhan";
-            DataTable dt = cls_Database.TableRead(query);
-            return dt;
-        }
-        public static DataTable _getOffice()
+        //public datatable Getdeparment()
+        //{
+        //    string query = "select * from tbl_bophan";
+        //    datatable dt = cls_database.tableread(query);
+        //    return dt;
+        //}
+        public DataTable GetOffice()
         {
             string query = "SELECT * FROM tbl_ChucDanh";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
 
-        public static DataTable _getInfoNhanVienBoPhan()
+        public DataTable GetInfoNhanVienBoPhan()
         {
             string query = @"SELECT  a.NhanVienID, a.BoPhanID , b.TenNV, c.TenBoPhan
                             FROM((tbl_NhanVienBoPhan a inner join tbl_NhanVien b ON a.NhanVienID = b.NhanVienID) 
@@ -282,7 +315,7 @@ namespace FastFood.BusinessLayer
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        public static int _insertNhanVienBoPhan(int nhanVienID, int boPhanID)
+        public int InsertNhanVienBoPhan(int nhanVienID, int boPhanID)
         {
             try
             {
@@ -296,7 +329,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _updateNhanVienBoPhan(int nhanVienID, int boPhanID)
+        public bool UpdateNhanVienBoPhan(int nhanVienID, int boPhanID)
         {
             try
             {
@@ -309,29 +342,22 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static DataTable _getNhanVienChucDanh()
+        public DataTable GetNhanVienChucDanh()
         {
-            string query = @"SELECT DISTINCT b.BoPhanID, b.TenBoPhan, f.TenChucDanh, f.TenNV, a.NhanVienID, f.ChucDanhID
-                           FROM tbl_NhanVienBoPhan a
-                           INNER JOIN tbl_BoPhan b ON a.BoPhanID = b.BoPhanID
-                           INNER JOIN 
-	                       (SELECT d.ChucDanhID, d.TenChucDanh, c.NhanVienID, e.TenNV
-	                        FROM tbl_NhanVienChucDanh c
-	                        INNER JOIN tbl_ChucDanh d ON c.ChucDanhID = d.ChucDanhID
-	                        INNER JOIN tbl_NhanVien e ON c.NhanVienID = e.NhanVienID) 
-		                    AS f ON a.NhanVienID = f.NhanVienID";
+            string query = @"SELECT tbl_NhanVien.NhanVienID, TenNV, tbl_ChucDanh.ChucDanhID, TenChucDanh from tbl_NhanVien, tbl_ChucDanh, tbl_NhanVienChucDanh where tbl_NhanVien.NhanVienID = tbl_NhanVienChucDanh.NhanVienID
+																and tbl_NhanVienChucDanh.ChucDanhID = tbl_ChucDanh.ChucDanhID";
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
-        
-        public static DataTable _getNhanVienBoPhanID(int boPhanID)
+
+        public DataTable GetNhanVienBoPhanID(int boPhanID)
         {
             string query = string.Format("SELECT a.NhanVienID, a.TenNV FROM tbl_NhanVien a INNER JOIN tbl_NhanVienBoPhan b ON a.NhanVienID = b.NhanVienID and b.BoPhanID = {0}", boPhanID);
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
 
-        public static bool _insertNhanVienChucDanh(int nhanVienID, int chucDanhID)
+        public bool InsertNhanVienChucDanh(int nhanVienID, int chucDanhID)
         {
             try
             {
@@ -345,7 +371,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _updateNhanVienChucDanh(int nhanVienID, int chucDanhID)
+        public bool UpdateNhanVienChucDanh(int nhanVienID, int chucDanhID)
         {
             try
             {
@@ -358,7 +384,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _deleteNhanVienChucDanh(int nhanVienID)
+        public bool DeleteNhanVienChucDanh(int nhanVienID)
         {
             try
             {
@@ -371,7 +397,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _checkNhanVienChucDanh(int nhanVienID)
+        public bool CheckNhanVienChucDanh(int nhanVienID)
         {
             string query = string.Format("SELECT * FROM tbl_NhanVienChucDanh WHERE NhanVienID = {0}", nhanVienID);
             DataTable dt = cls_Database.TableRead(query);
@@ -382,7 +408,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _delNhanVienBoPhan(int nhanVienID)
+        public bool DelNhanVienBoPhan(int nhanVienID)
         {
             try
             {
@@ -395,7 +421,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static DataTable _getProfileEmployess(int nhanVienID)
+        public DataTable GetProfileEmployess(int nhanVienID)
         {
             string query = string.Format(@"SELECT a.TenNV, a.DiaChi, a.Email, a.MaNV, a.NgaySinh, a.SDT, b.ImagePath, a.CMND, b.NgayVaoLam, c.TenDanToc, d.TenBangCap,  e.TenTinhThanh, f.TenTonGiao, g.GioiTinh 
                                             FROM tbl_NhanVien a 
@@ -404,12 +430,12 @@ namespace FastFood.BusinessLayer
                                             INNER JOIN tbl_BangCap d on b.BangCapID = d.BangCapID
                                             INNER JOIN tbl_TinhThanh e on b.TinhThanhID = e.TinhThanhID
                                             INNER JOIN tbl_TonGiao f on b.TonGiaoID = f.TonGiaoID
-                                            INNER JOIN tbl_GioiTinh g on g.GioiTinhID = a.GioiTinhID
+                                            INNER JOIN tblGioiTinh g on g.GioiTinhID = a.GioiTinhID
                                             WHERE a.NhanVienID = '{0}'", nhanVienID);
             return cls_Database.TableRead(query);
         }
-        
-        public static bool _checkPassword(string password, string id)
+
+        public bool CheckPassword(string password, string id)
         {
             string query = string.Format("SELECT MatKhau FROM tbl_NguoiDung WHERE NguoiDungID = '{0}'", id);
             DataTable dt = cls_Database.TableRead(query);
@@ -421,7 +447,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _updatePassword(string password, string id)
+        public bool UpdatePassword(string password, string id)
         {
             try
             {
@@ -435,21 +461,11 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getUserPermission()
-        {
-            string query = @"SELECT a.NguoiDungID, b.NhanVienID, c.BoPhanID, d.TenBoPhan,  b.MaNV, b.TenNV, a.TenDangNhap, a.MatKhau, a.QuanTri 
-                            FROM tbl_NguoiDung a
-                            INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID
-                            INNER JOIN tbl_NhanVienBoPhan c ON a.NhanVienID = c.NhanVienID
-                            INNER JOIN tbl_BoPhan d ON d.BoPhanID = c.BoPhanID";
-            return cls_Database.TableRead(query);
-        }
-
-        public static bool _delUserPermission(int NguoiDungID)
+        public bool DelUserPermission(int NguoiDungID)
         {
             try
             {
-                if (_delPermission(NguoiDungID))
+                if (DelPermission(NguoiDungID))
                 {
                     string query = string.Format("DELETE FROM tbl_NguoiDung WHERE NguoiDungID = '{0}'", NguoiDungID);
                     cls_Database.AED(query);
@@ -465,7 +481,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _delPermission(int NguoiDungID)
+        public bool DelPermission(int NguoiDungID)
         {
             try
             {
@@ -479,8 +495,8 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _insertUserPermission(string TenDangNhap, string MatKhau, int QuanTri, int NhanVienID)
-        { 
+        public bool InsertUserPermission(string TenDangNhap, string MatKhau, int QuanTri, int NhanVienID)
+        {
             try
             {
                 string query = string.Format("INSERT INTO tbl_NguoiDung(TenDangNhap, MatKhau, QuanTri, NhanVienID) VAlUES (N'{0}', '{1}', {2}, '{3}')", TenDangNhap, MatKhau, QuanTri, NhanVienID);
@@ -493,7 +509,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _checkNameUser(string name)
+        public bool CheckNameUser(string name)
         {
             string query = string.Format("SELECT TenDangNhap FROM tbl_NguoiDung WHERE TenDangNhap = N'{0}'", name);
             DataTable dt = BusinessLayer.cls_Database.TableRead(query);
@@ -504,7 +520,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _checkUserPermission(int NhanVienID)
+        public bool CheckUserPermission(int NhanVienID)
         {
             string query = string.Format("SELECT NhanVienID FROM tbl_NguoiDung WHERE NhanVienID = '{0}'", NhanVienID);
             DataTable dt = BusinessLayer.cls_Database.TableRead(query);
@@ -515,7 +531,7 @@ namespace FastFood.BusinessLayer
             return true;
         }
 
-        public static bool _updateUserPermission(string TenDangNhap, string MatKhau, int QuanTri, int NhanVienID, int NguoiDungID)
+        public bool UpdateUserPermission(string TenDangNhap, string MatKhau, int QuanTri, int NhanVienID, int NguoiDungID)
         {
             try
             {
@@ -538,7 +554,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getUserPermission(int NhanVienID)
+        public DataTable GetUserPermission(int NhanVienID)
         {
             string query = string.Format(@"SELECT a.NguoiDungID, a.TenDangNhap 
                                         FROM tbl_NguoiDung a 
@@ -547,14 +563,14 @@ namespace FastFood.BusinessLayer
             return dt;
         }
 
-        public static DataTable _getNghiepVu(int NguoiDungID)
+        public DataTable GetNghiepVu(int NguoiDungID)
         {
             string query = string.Format("SELECT NghiepVuID FROM tbl_QuyenNguoiDung WHERE NguoiDungID = {0}", NguoiDungID);
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
 
-        public static bool _insertPermission(int NguoiDungID, int Permission)
+        public bool InsertPermission(int NguoiDungID, int Permission)
         {
             try
             {

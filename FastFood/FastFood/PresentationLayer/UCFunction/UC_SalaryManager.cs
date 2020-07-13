@@ -99,8 +99,8 @@ namespace FastFood.PresentationLayer.UCFunction
                     }
                     else
                     {
-                        bool _delCD = salary.DelChucDanh(_chucDanhID);
-                        if (_delCD)
+                        bool DelCD = salary.DelChucDanh(_chucDanhID);
+                        if (DelCD)
                         {
                             MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             _sttButton(true, false, true, false, false, false);
@@ -133,8 +133,8 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 if (check == 1)
                 {
-                    bool _insertCD = salary.InsertChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text);
-                    if (_insertCD)
+                    bool InsertCD = salary.InsertChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text);
+                    if (InsertCD)
                     {
                         MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);
@@ -148,8 +148,8 @@ namespace FastFood.PresentationLayer.UCFunction
                 }
                 else
                 {
-                    bool _updateCD = salary.UpdateChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text, _chucDanhID);
-                    if (_updateCD)
+                    bool UpdateCD = salary.UpdateChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text, _chucDanhID);
+                    if (UpdateCD)
                     {
                         MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);

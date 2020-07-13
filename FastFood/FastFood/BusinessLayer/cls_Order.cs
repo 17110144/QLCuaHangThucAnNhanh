@@ -12,7 +12,7 @@ namespace FastFood.BusinessLayer
     {
 
         //Search
-        public static DataTable _searchProduct(string nameProduct)
+        public  DataTable SearchProduct(string nameProduct)
         {
             string query = string.Format("SELECT MaSP, TenSP, GiaTien, SoLuong, GiamGia FROM tbl_SanPham WHERE TenSP LIKE N'{0}%' OR TenSP LIKE N'%{0}%' OR TenSP LIKE N'%{0}'", nameProduct);
             DataTable dt = cls_Database.TableRead(query);
@@ -20,7 +20,7 @@ namespace FastFood.BusinessLayer
         }
 
         //get MaHD
-        public static DataTable _getMaHD()
+        public  DataTable GetMaHD()
         {
             string query = string.Format("SELECT MaHD FROM tbl_HoaDon");
             DataTable dt = cls_Database.TableRead(query);
@@ -28,7 +28,7 @@ namespace FastFood.BusinessLayer
         }
 
         //thêm mới Hóa Đơn
-        public static bool _addNewHD(string maHD, int nhanVienID, string tenKhach, int tongTien)
+        public  bool AddNewHD(string maHD, int nhanVienID, string tenKhach, int tongTien)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace FastFood.BusinessLayer
             }
         }
         //thêm vào chi tiết hóa đơn
-        public static void _updateCTHD(string maHD, string maSP, int SLMua)
+        public  void UpdateCTHD(string maHD, string maSP, int SLMua)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace FastFood.BusinessLayer
             }
         }
         //Cập nhật lại số lượng sp 
-        public static void _updateSP(string maSP, int SLMua)
+        public  void UpdateSP(string maSP, int SLMua)
         {
             try
             {

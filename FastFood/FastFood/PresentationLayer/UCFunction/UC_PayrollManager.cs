@@ -65,8 +65,8 @@ namespace FastFood.PresentationLayer.UCFunction
 
                     if (ChiTietBanKeLuongID != "" && TrangThai == "1")
                     {
-                        bool _updateBanKeLuong = salary.UpdateChiTietBanKeLuong(TienLuong, PhuCap, TongLuong, ThucLinh, ChiTietBanKeLuongID);
-                        if (_updateBanKeLuong)
+                        bool UpdateBanKeLuong = salary.UpdateChiTietBanKeLuong(TienLuong, PhuCap, TongLuong, ThucLinh, ChiTietBanKeLuongID);
+                        if (UpdateBanKeLuong)
                         {
                             flag++;
                         }
@@ -94,8 +94,8 @@ namespace FastFood.PresentationLayer.UCFunction
                     if (row.Cells["TrangThai"].Value.ToString() == "1")
                     {
                         string ChiTietBanKeLuongID = row.Cells["ChiTietBanKeLuongID"].Value.ToString();
-                        bool _updateTrangThai = salary.UpdateTrangThaiBanKeLuong(ChiTietBanKeLuongID);
-                        if (_updateTrangThai)
+                        bool UpdateTrangThai = salary.UpdateTrangThaiBanKeLuong(ChiTietBanKeLuongID);
+                        if (UpdateTrangThai)
                         {
                             flag++;
                         }

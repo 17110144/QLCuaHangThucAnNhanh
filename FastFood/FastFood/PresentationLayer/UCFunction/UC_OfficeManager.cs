@@ -14,6 +14,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_OfficeManager : UserControl
     {
+        cls_Employess employess = new cls_Employess();
         private int check = 0;
         private int _nhanVienID = 0;
         public UC_OfficeManager()
@@ -42,14 +43,19 @@ namespace FastFood.PresentationLayer.UCFunction
         {
             _sttButton(true, false, true, false, false, false);
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            dtList.DataSource = cls_Employess._getNhanVienChucDanh();
-            DataTable getBoPhan = cls_Employess._getDeparment();
-            DataTable getChucDanh = cls_Employess._getOffice();
+            dtList.DataSource = employess.GetNhanVienChucDanh();
+            // DataTable getBoPhan = employess.GetDeparment();
+            DataTable getChucDanh = employess.GetOffice();
 
 
             cmbChucDanh.ValueMember = "ChucDanhID";
             cmbChucDanh.DisplayMember = "TenChucDanh";
             cmbChucDanh.DataSource = getChucDanh;
+
+            cmbTenNV.DataSource = dtList.DataSource;
+
+            cmbTenNV.DisplayMember = "TenNV";
+            cmbTenNV.ValueMember = "NhanVienID";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -78,12 +84,12 @@ namespace FastFood.PresentationLayer.UCFunction
             }
             else
             {
-                bool delNVCD = cls_Employess._deleteNhanVienChucDanh(_nhanVienID);
+                bool delNVCD = employess.DeleteNhanVienChucDanh(_nhanVienID);
                 if (delNVCD == true)
                 {
                     MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _sttButton(true, false, true, false, false, false);
-                    dtList.DataSource = cls_Employess._getNhanVienChucDanh();
+                    dtList.DataSource = employess.GetNhanVienChucDanh();
                     _nhanVienID = 0;
                 }
                 else
@@ -108,13 +114,13 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 if (check == 1)
                 {
-                    bool insertNVCD = cls_Employess._insertNhanVienChucDanh(Convert.ToInt32(cmbTenNV.SelectedValue), Convert.ToInt32(cmbChucDanh.SelectedValue));
+                    bool insertNVCD = employess.InsertNhanVienChucDanh(Convert.ToInt32(cmbTenNV.SelectedValue), Convert.ToInt32(cmbChucDanh.SelectedValue));
 
                     if (insertNVCD == true)
                     {
                         MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);
-                        dtList.DataSource = cls_Employess._getNhanVienChucDanh();
+                        dtList.DataSource = employess.GetNhanVienChucDanh();
                     }
                     else
                     {
@@ -123,12 +129,12 @@ namespace FastFood.PresentationLayer.UCFunction
                 }
                 else
                 {
-                    bool updateNVCD = cls_Employess._updateNhanVienChucDanh(Convert.ToInt32(cmbTenNV.SelectedValue), Convert.ToInt32(cmbChucDanh.SelectedValue));
+                    bool updateNVCD = employess.UpdateNhanVienChucDanh(Convert.ToInt32(cmbTenNV.SelectedValue), Convert.ToInt32(cmbChucDanh.SelectedValue));
                     if (updateNVCD == true)
                     {
                         MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);
-                        dtList.DataSource = cls_Employess._getNhanVienChucDanh();
+                        dtList.DataSource = employess.GetNhanVienChucDanh();
                     }
                     else
                     {
@@ -172,11 +178,13 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void dtList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cls_Employess._getNhanVienChucDanh().Rows.Count > 0)
+            if (employess.GetNhanVienChucDanh().Rows.Count > 0)
             {
                 int index = dtList.CurrentCell.RowIndex;
                 _nhanVienID = Convert.ToInt32(dtList.Rows[index].Cells["NhanVienID"].Value);
-                cmbTenNV.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["NhanVienID"].Value);
+                cmbTenNV.DisplayMember = dtList.Rows[index].Cells["TenNV"].Value.ToString();
+                cmbTenNV.SelectedValue = dtList.Rows[index].Cells["NhanVienID"].Value.ToString();
+                //cmbTenNV.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["TenNV"].Value);
                 cmbChucDanh.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["ChucDanhID"].Value);
                 btnSua.Enabled = true;
             }

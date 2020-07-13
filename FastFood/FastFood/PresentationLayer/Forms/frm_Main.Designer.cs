@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelSide = new System.Windows.Forms.Panel();
             this.btnSystem = new System.Windows.Forms.Button();
@@ -58,7 +57,6 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pnlLeft.Controls.Add(this.lblInfo);
             this.pnlLeft.Controls.Add(this.btnLogout);
             this.pnlLeft.Controls.Add(this.panelSide);
             this.pnlLeft.Controls.Add(this.btnSystem);
@@ -74,18 +72,6 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(229, 645);
             this.pnlLeft.TabIndex = 3;
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.White;
-            this.lblInfo.Location = new System.Drawing.Point(2, 618);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(21, 25);
-            this.lblInfo.TabIndex = 14;
-            this.lblInfo.Text = "?";
-            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // btnLogout
             // 
@@ -368,7 +354,6 @@
             this.Text = "Hệ Thống";
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.pnlLeft.ResumeLayout(false);
-            this.pnlLeft.PerformLayout();
             this.pnlLeftTop.ResumeLayout(false);
             this.pnlLeftTop.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
@@ -392,7 +377,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnSetting;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl3;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastFood.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace FastFood.Forms
 {
     public partial class frm_ChangePassword : Form
     {
+        cls_Employess employess = new cls_Employess();
         public frm_ChangePassword()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace FastFood.Forms
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            /*
+
             if (txtMatKhauCu.Text == "" || txtMatKhauMoi.Text == "" || txtNhapLai.Text == "")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại mật khẩu. Mật khẩu không được trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -40,12 +42,12 @@ namespace FastFood.Forms
                 MessageBox.Show("Mật khẩu không khớp. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (!lib.cls_Employess._checkPassword(lib.cls_EnCrypt.EncryptMD5(txtMatKhauCu.Text), frm_Main.NguoiDungID))
+            if (!employess.CheckPassword(txtMatKhauCu.Text, frm_Main.NguoiDungID))
             {
                 MessageBox.Show("Mật khẩu cũ không đúng. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (lib.cls_Employess._updatePassword(lib.cls_EnCrypt.EncryptMD5(txtMatKhauMoi.Text), frm_Main.NguoiDungID))
+            if (employess.UpdatePassword(txtMatKhauMoi.Text, frm_Main.NguoiDungID))
             {
                 MessageBox.Show("Đổi mật khẩu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMatKhauCu.Text = "";
@@ -56,7 +58,7 @@ namespace FastFood.Forms
             {
                 MessageBox.Show("Đã có lỗi xảy ra. Vui lòng kiểm tra và thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

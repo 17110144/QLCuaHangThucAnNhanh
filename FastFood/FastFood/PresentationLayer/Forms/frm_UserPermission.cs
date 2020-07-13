@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastFood.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace FastFood.Forms
 {
     public partial class frm_UserPermission : Form
     {
+        cls_Employess employess = new cls_Employess();
         public frm_UserPermission()
         {
             InitializeComponent();
@@ -24,46 +26,34 @@ namespace FastFood.Forms
 
         private void frm_UserPermission_Load(object sender, EventArgs e)
         {
-            /*
-            DataTable dt = lib.cls_Employess._getDeparment();
-            cmbBoPhan.ValueMember = "BoPhanID";
-            cmbBoPhan.DisplayMember = "TenBoPhan";
-            cmbBoPhan.DataSource = dt;
-            */
-        }
+            DataTable dt = employess.GetAllUserName();
+            cmbNguoiDung.ValueMember = "NguoiDungID";
+            cmbNguoiDung.DisplayMember = "TenDangNhap";
+            cmbNguoiDung.DataSource = dt;
 
-        private void cmbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            DataTable dt = lib.cls_Employess._getNhanVienBoPhanID(Convert.ToInt32(cmbBoPhan.SelectedValue));
-            cmbNhanVien.ValueMember = "NhanVienID";
+            DataTable dt2 = employess.GetAllEmpName();
+            cmbNhanVien.ValueMember = "NguoiDungID";
             cmbNhanVien.DisplayMember = "TenNV";
-            cmbNhanVien.DataSource = dt;
-            */
+            cmbNhanVien.DataSource = dt2;
         }
 
         private void cmbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            DataTable dt = lib.cls_Employess._getUserPermission(Convert.ToInt32(cmbNhanVien.SelectedValue));
+            DataTable dt = employess.GetUserByID(Convert.ToInt32(cmbNhanVien.SelectedValue));
             cmbNguoiDung.ValueMember = "NguoiDungID";
             cmbNguoiDung.DisplayMember = "TenDangNhap";
             cmbNguoiDung.DataSource = dt;
-            */
         }
 
-        private void cmbNguoiDung_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbNguoiDung_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            /*
             cbHeThong.Checked = false;
             cbNhanSu.Checked = false;
             cbTienLuong.Checked = false;
-            cbThongKe.Checked = false;
             cbSanPham.Checked = false;
             cbGoiMon.Checked = false;
             cbDanhMuc.Checked = false;
-
-            DataTable nghiepVu = lib.cls_Employess._getNghiepVu(Convert.ToInt32(cmbNguoiDung.SelectedValue));
+            DataTable nghiepVu = employess.GetNghiepVu(Convert.ToInt32(cmbNguoiDung.SelectedValue));
             for (int i = 0; i < nghiepVu.Rows.Count; i++)
             {
                 switch (nghiepVu.Rows[i].ItemArray[0].ToString())
@@ -78,7 +68,6 @@ namespace FastFood.Forms
                         cbTienLuong.Checked = true;
                         break;
                     case "4":
-                        cbThongKe.Checked = true;
                         break;
                     case "5":
                         cbSanPham.Checked = true;
@@ -91,18 +80,17 @@ namespace FastFood.Forms
                         break;
                 }
             }
-            */
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            /*
+
             if (cmbNguoiDung.SelectedValue == null)
             {
                 MessageBox.Show("Nhân viên này chưa có tài khoản. Vui lòng kiểm tra và thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            bool delPermission = lib.cls_Employess._delPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue));
+            bool delPermission = employess.DelPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue));
             if (!delPermission)
             {
                 MessageBox.Show("Đã có lỗi xảy ra. Vui lòng kiểm tra và thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -110,34 +98,32 @@ namespace FastFood.Forms
             }
             if (cbHeThong.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbHeThong.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbHeThong.AccessibleDescription));
             }
             if (cbDanhMuc.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbDanhMuc.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbDanhMuc.AccessibleDescription));
             }
             if (cbNhanSu.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbNhanSu.AccessibleDescription));
-            }
-            if (cbThongKe.Checked == true)
-            {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbThongKe.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbNhanSu.AccessibleDescription));
             }
             if (cbTienLuong.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbTienLuong.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbTienLuong.AccessibleDescription));
             }
             if (cbSanPham.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbSanPham.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbSanPham.AccessibleDescription));
             }
             if (cbGoiMon.Checked == true)
             {
-                lib.cls_Employess._insertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbGoiMon.AccessibleDescription));
+                employess.InsertPermission(Convert.ToInt32(cmbNguoiDung.SelectedValue), Convert.ToInt32(cbGoiMon.AccessibleDescription));
             }
             MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            */
+
         }
+
+
     }
 }

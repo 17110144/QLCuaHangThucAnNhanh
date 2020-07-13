@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using FastFood.Forms;
+using FastFood.BusinessLayer;
 
 namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_DrinkManager : UserControl
     {
         int check = 0;
+        cls_Product product = new cls_Product();
         public UC_DrinkManager()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace FastFood.PresentationLayer.UCFunction
              */
             DataTable dt = new DataTable();
             //hàm get cột MaSP
-            dt = BusinessLayer.cls_Product._getIDProduct();
+            dt = product.GetIDProduct();
             // tạo temp để lưu số thứ tự của mã sp
             int temp = 0;
             //nếu danh sánh sp rỗng
@@ -108,7 +110,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void txtTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            dtListProduct.DataSource = BusinessLayer.cls_Product._searchProduct(2, txtTimKiem.Text, cmbFilter.SelectedValue.ToString());
+            dtListProduct.DataSource = product.SearchProduct(2, txtTimKiem.Text, cmbFilter.SelectedValue.ToString());
             _formatDT();
         }
 
@@ -156,15 +158,15 @@ namespace FastFood.PresentationLayer.UCFunction
                 DialogResult result = MessageBox.Show("Bạn có muốn xóa thức ăn này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    DataTable dtCTHD = BusinessLayer.cls_Product._checkProduct(maNuocUong);
+                    DataTable dtCTHD = product.CheckProduct(maNuocUong);
                     if (dtCTHD.Rows.Count > 0)
                     {
                         MessageBox.Show("Vui lòng xóa sản phẩm trong CTHD", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else if (BusinessLayer.cls_Product._delProduct(maNuocUong) == true)
+                    else if (product.DelProduct(maNuocUong) == true)
                     {
                         MessageBox.Show(string.Format("Xóa thành công sản phẩm có mã {0}", maNuocUong), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dtListProduct.DataSource = BusinessLayer.cls_Product._showProduct(2);
+                        dtListProduct.DataSource = product.ShowProduct(2);
                         _formatDT();
                     }
                     else
@@ -207,7 +209,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 if (check == 1)
                 {
                     string genMaSP = _genIdProduct();
-                    bool addProduct = BusinessLayer.cls_Product._addProduct(2, genMaSP, txtTenNuocUong.Text, Convert.ToInt32(cmbNhaCungCap.SelectedValue), int.Parse(txtGiaTien.Text), int.Parse(txtGiamGia.Text), int.Parse(txtSoLuong.Text));
+                    bool addProduct = product.AddProduct(2, genMaSP, txtTenNuocUong.Text, Convert.ToInt32(cmbNhaCungCap.SelectedValue), int.Parse(txtGiaTien.Text), int.Parse(txtGiamGia.Text), int.Parse(txtSoLuong.Text));
 
                     if (addProduct == true)
                     {
@@ -215,7 +217,7 @@ namespace FastFood.PresentationLayer.UCFunction
                         _reset();
                         _formatDT();
                         _sttButton(true, true, true, false, false, false);
-                        dtListProduct.DataSource = BusinessLayer.cls_Product._showProduct(2);
+                        dtListProduct.DataSource = product.ShowProduct(2);
                         txtTenNuocUong.Focus();
                     }
                     else
@@ -225,11 +227,11 @@ namespace FastFood.PresentationLayer.UCFunction
                 }
                 else
                 {
-                    bool updateProduct = BusinessLayer.cls_Product._updateProduct(txtMaNuocUong.Text, txtTenNuocUong.Text, Convert.ToInt32(cmbNhaCungCap.SelectedValue), int.Parse(txtGiaTien.Text), int.Parse(txtGiamGia.Text), int.Parse(txtSoLuong.Text));
+                    bool updateProduct = product.UpdateProduct(txtMaNuocUong.Text, txtTenNuocUong.Text, Convert.ToInt32(cmbNhaCungCap.SelectedValue), int.Parse(txtGiaTien.Text), int.Parse(txtGiamGia.Text), int.Parse(txtSoLuong.Text));
                     if (updateProduct == true)
                     {
                         MessageBox.Show("Cập nhật thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dtListProduct.DataSource = BusinessLayer.cls_Product._showProduct(2);
+                        dtListProduct.DataSource = product.ShowProduct(2);
                         _reset();
                         _formatDT();
                         _sttButton(true, true, true, false, false, false);
@@ -252,11 +254,11 @@ namespace FastFood.PresentationLayer.UCFunction
         private void UC_DrinkManager_Load(object sender, EventArgs e)
         {
             AutoValidate = AutoValidate.EnableAllowFocusChange;
-            dtListProduct.DataSource = BusinessLayer.cls_Product._showProduct(2);
+            dtListProduct.DataSource = product.ShowProduct(2);
             _formatDT();
             _sttButton(true, true, true, false, false, false);
             _reset();
-            cmbNhaCungCap.DataSource = BusinessLayer.cls_Product._showNCC();
+            cmbNhaCungCap.DataSource = product.ShowNCC();
             cmbNhaCungCap.ValueMember = "NCCID";
             cmbNhaCungCap.DisplayMember = "TenNhaCungCap";
 

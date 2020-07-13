@@ -53,6 +53,16 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
+        public bool CheckChamCong(int nhanvienID)
+        {
+            string query = string.Format("SELECT NhanVienID FROM tbl_ChamCong WHERE NhanVienID = {0}", nhanvienID);
+            DataTable dt = cls_Database.TableRead(query);
+            if (dt.Rows.Count > 0)
+            {
+                return false;
+            }
+            return true;
+        }
         public  bool DelChucDanh(int chucDanhID)
         {
             try

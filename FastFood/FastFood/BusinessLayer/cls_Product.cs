@@ -10,19 +10,23 @@ namespace FastFood.BusinessLayer
 {
     class cls_Product
     {
-        public static DataTable _showProduct(int choose)
+        public DataTable ShowProduct(int choose)
         {
             string query = string.Format("SELECT a.MaSP, a.TenSP, b.NCCID,  b.TenNhaCungCap, a.GiaTien, a.GiamGia, a.SoLuong FROM tbl_SanPham a, tbl_NhaCungCap b WHERE b.NCCID = a.NCCID and LoaiSPID ={0}", choose);
             return cls_Database.TableRead(query);
         }
-
-        public static DataTable _showNCC()
+        public DataTable ShowAllProductForOrder()
+        {
+            string query = string.Format("SELECT MaSP, TenSP, GiaTien, SoLuong, GiamGia FROM tbl_SanPham ");
+            return cls_Database.TableRead(query);
+        }
+        public DataTable ShowNCC()
         {
             string query = string.Format("SELECT * FROM tbl_NhaCungCap");
             return cls_Database.TableRead(query);
         }
 
-        public static bool _delProduct(string id)
+        public bool DelProduct(string id)
         {
             try
             {
@@ -36,13 +40,13 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _checkProduct(string id)
+        public DataTable CheckProduct(string id)
         {
             string query = string.Format("SELECT * FROM tbl_CTHD WHERE MaSP = '{0}'", id);
             return cls_Database.TableRead(query);
         }
 
-        public static bool _updateProduct(string id, string name, int nccid, int price, int discount, int num)
+        public bool UpdateProduct(string id, string name, int nccid, int price, int discount, int num)
         {
             try
             {
@@ -56,13 +60,13 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _searchProduct(int choose, string name, string tbl)
+        public DataTable SearchProduct(int choose, string name, string tbl)
         {
             string query = string.Format("SELECT a.MaSP, a.TenSP, b.NCCID, b.TenNhaCungCap, a.GiaTien, a.GiamGia, a.SoLuong FROM tbl_SanPham a inner join tbl_NhaCungCap b ON b.NCCID = a.NCCID WHERE (a.LoaiSPID = {0} and a.{1} LIKE N'{2}%') OR  (a.LoaiSPID = {0} and a.{1} LIKE N'%{2}%') OR ( a.LoaiSPID = {0} and a.{1} LIKE N'%{2}') ", choose, tbl, name);
             return cls_Database.TableRead(query);
         }
 
-        public static bool _addProduct(int choose, string id, string name, int nccid, int price, int discount, int num)
+        public bool AddProduct(int choose, string id, string name, int nccid, int price, int discount, int num)
         {
             try
             {
@@ -77,20 +81,20 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getIDProduct()
+        public DataTable GetIDProduct()
         {
             string query = string.Format("SELECT MaSP FROM tbl_SanPham");
             DataTable dt = cls_Database.TableRead(query);
             return dt;
         }
 
-        public static DataTable _showProductType()
+        public DataTable ShowProductType()
         {
             string query = string.Format("SELECT LoaiSPID, TenLoaiSP FROM tbl_LoaiSP");
             return cls_Database.TableRead(query);
         }
 
-        public static bool _updateProductType(int id, string nameProductType)
+        public bool UpdateProductType(int id, string nameProductType)
         {
             try
             {
@@ -104,7 +108,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _addNCC(string nameNCC)
+        public bool AddNCC(string nameNCC)
         {
             try
             {
@@ -118,7 +122,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _delNCC(int id)
+        public bool DelNCC(int id)
         {
             try
             {
@@ -132,13 +136,13 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _checkNCC(int id)
+        public DataTable CheckNCC(int id)
         {
             string query = string.Format("SELECT NCCID FROM tbl_SanPham WHERE NCCID = '{0}'", id);
             return cls_Database.TableRead(query);
         }
 
-        public static bool _updateNCC(int id, string nameNCC)
+        public bool UpdateNCC(int id, string nameNCC)
         {
             try
             {
@@ -151,7 +155,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static DataTable _showDetailNCC()
+        public DataTable ShowDetailNCC()
         {
             string query = string.Format("SELECT NCCID , TenNhaCungCap FROM tbl_NhaCungCap");
             return cls_Database.TableRead(query);

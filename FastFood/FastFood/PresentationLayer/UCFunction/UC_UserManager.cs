@@ -14,6 +14,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_UserManager : UserControl
     {
+        cls_Employess employess = new cls_Employess();
         private int check = 0;
         private int _NguoiDungID = 0;
         //private int nhanvienID = 0;
@@ -39,22 +40,16 @@ namespace FastFood.PresentationLayer.UCFunction
         }
         private void UC_UserManager_Load(object sender, EventArgs e)
         {
-            DataTable dt = cls_Employess._getDeparment();
-            DataTable dtlist = cls_Employess._getUserPermission();
+            DataTable dt2 = employess.GetAllEmpName();
+            cmbNhanVien.ValueMember = "NguoiDungID";
+            cmbNhanVien.DisplayMember = "TenNV";
+            cmbNhanVien.DataSource = dt2;
+
+
+            DataTable dtlist = employess.GetUserPermission();
             _sttButton(true, false, true, false, false, false);
             _reset();
-            cmbBoPhan.ValueMember = "BoPhanID";
-            cmbBoPhan.DisplayMember = "TenBoPhan";
-            cmbBoPhan.DataSource = dt;
             dtList.DataSource = dtlist;
-        }
-
-        private void cmbBoPhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataTable dt = cls_Employess._getNhanVienBoPhanID(Convert.ToInt32(cmbBoPhan.SelectedValue));
-            cmbNhanVien.ValueMember = "NhanVienID";
-            cmbNhanVien.DisplayMember = "TenNV";
-            cmbNhanVien.DataSource = dt;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -80,13 +75,13 @@ namespace FastFood.PresentationLayer.UCFunction
                 DialogResult result = MessageBox.Show("Xóa người dùng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    bool delUser = cls_Employess._delUserPermission(_NguoiDungID);
+                    bool delUser = employess.DelUserPermission(_NguoiDungID);
                     if (delUser == true)
                     {
                         MessageBox.Show("Xóa thành công người dùng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _reset();
                         _sttButton(true, false, true, false, false, false);
-                        dtList.DataSource = cls_Employess._getUserPermission();
+                        dtList.DataSource = employess.GetUserPermission();
                         _NguoiDungID = 0;
                     }
                     else
@@ -105,15 +100,14 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void dtList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cls_Employess._getUserPermission().Rows.Count > 0)
+            if (employess.GetUserPermission().Rows.Count > 0)
             {
                 int index = dtList.CurrentCell.RowIndex;
                 int NhanVienID = Convert.ToInt32(dtList.Rows[index].Cells["NhanVienID"].Value);
-                int BoPhanID = Convert.ToInt32(dtList.Rows[index].Cells["BoPhanID"].Value);
                 _NguoiDungID = Convert.ToInt32(dtList.Rows[index].Cells["NguoiDungID"].Value);
-                cmbBoPhan.SelectedValue = BoPhanID;
                 cmbNhanVien.SelectedValue = NhanVienID;
                 txtTenDangNhap.Text = dtList.Rows[index].Cells["TenDangNhap"].Value.ToString();
+                txtMatKhau.Text = dtList.Rows[index].Cells["MatKhau"].Value.ToString();
                 cbQuanTri.Checked = Convert.ToBoolean(dtList.Rows[index].Cells["QuanTri"].Value);
                 btnSua.Enabled = true;
             }
@@ -128,12 +122,12 @@ namespace FastFood.PresentationLayer.UCFunction
                     MessageBox.Show("Tên đăng nhập và mật khẩu không được trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (!cls_Employess._checkUserPermission(Convert.ToInt32(cmbNhanVien.SelectedValue)))
+                if (!employess.CheckUserPermission(Convert.ToInt32(cmbNhanVien.SelectedValue)))
                 {
                     MessageBox.Show("Nhân viên này đã có tài khoản. Vui lòng kiểm tra và thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (!cls_Employess._checkNameUser(txtTenDangNhap.Text))
+                if (!employess.CheckNameUser(txtTenDangNhap.Text))
                 {
                     MessageBox.Show("Tên đăng nhập đã có trên hệ thống. Vui lòng kiểm tra và thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -143,13 +137,13 @@ namespace FastFood.PresentationLayer.UCFunction
                     MessageBox.Show("Mật khẩu ít nhất phải có 8 kí tự.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                bool addUserPermission = cls_Employess._insertUserPermission(txtTenDangNhap.Text, txtMatKhau.Text, Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue));
+                bool addUserPermission = employess.InsertUserPermission(txtTenDangNhap.Text, txtMatKhau.Text, Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue));
                 if (addUserPermission)
                 {
                     MessageBox.Show("Tạo tài khoản thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _reset();
                     _sttButton(true, false, true, false, false, false);
-                    dtList.DataSource = cls_Employess._getUserPermission();
+                    dtList.DataSource = employess.GetUserPermission();
                 }
                 else
                 {
@@ -166,11 +160,11 @@ namespace FastFood.PresentationLayer.UCFunction
                 bool updateUserPermission;
                 if (txtMatKhau.Text != "")
                 {
-                    updateUserPermission = cls_Employess._updateUserPermission(txtTenDangNhap.Text, txtMatKhau.Text, Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue), _NguoiDungID);
+                    updateUserPermission = employess.UpdateUserPermission(txtTenDangNhap.Text, txtMatKhau.Text, Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue), _NguoiDungID);
                 }
                 else
                 {
-                    updateUserPermission = cls_Employess._updateUserPermission(txtTenDangNhap.Text, "", Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue), _NguoiDungID);
+                    updateUserPermission = employess.UpdateUserPermission(txtTenDangNhap.Text, "", Convert.ToInt32(cbQuanTri.Checked), Convert.ToInt32(cmbNhanVien.SelectedValue), _NguoiDungID);
                 }
 
                 if (updateUserPermission)
@@ -178,7 +172,7 @@ namespace FastFood.PresentationLayer.UCFunction
                     MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _reset();
                     _sttButton(true, false, true, false, false, false);
-                    dtList.DataSource = cls_Employess._getUserPermission();
+                    dtList.DataSource = employess.GetUserPermission();
                 }
                 else
                 {
@@ -192,6 +186,11 @@ namespace FastFood.PresentationLayer.UCFunction
             _reset();
             _sttButton(true, false, true, false, false, false);
             frm_Main.Instance.pnlContainer.Controls["UC_System"].BringToFront();
+        }
+
+        private void cmbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
