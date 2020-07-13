@@ -333,6 +333,7 @@
             this.dtListProductType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtListProductType.Size = new System.Drawing.Size(857, 341);
             this.dtListProductType.TabIndex = 1;
+            this.dtListProductType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListProductType_CellClick);
             // 
             // LoaiSPID
             // 

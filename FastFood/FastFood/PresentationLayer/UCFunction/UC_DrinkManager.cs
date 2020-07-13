@@ -143,7 +143,17 @@ namespace FastFood.PresentationLayer.UCFunction
                 txtSoLuong.Text = dtListProduct.Rows[index].Cells["SoLuong"].Value.ToString();
             }
         }
-
+        private void dtListProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dtListProduct.CurrentCell.RowIndex;
+            txtMaNuocUong.Enabled = false;
+            txtMaNuocUong.Text = dtListProduct.Rows[index].Cells["MaSP"].Value.ToString();
+            txtTenNuocUong.Text = dtListProduct.Rows[index].Cells["TenSP"].Value.ToString();
+            cmbNhaCungCap.SelectedValue = Convert.ToInt32(dtListProduct.Rows[index].Cells["NCCID"].Value);
+            txtGiaTien.Text = dtListProduct.Rows[index].Cells["GiaTien"].Value.ToString();
+            txtGiamGia.Text = dtListProduct.Rows[index].Cells["GiamGia"].Value.ToString();
+            txtSoLuong.Text = dtListProduct.Rows[index].Cells["SoLuong"].Value.ToString();
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dtListProduct.SelectedRows.Count == 0)
@@ -340,5 +350,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 errorProvidera.SetError(txtGiamGia, "");
             }
         }
+
+
     }
 }

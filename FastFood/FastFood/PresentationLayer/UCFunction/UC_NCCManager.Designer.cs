@@ -335,6 +335,7 @@
             this.dtListNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtListNCC.Size = new System.Drawing.Size(857, 341);
             this.dtListNCC.TabIndex = 1;
+            this.dtListNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListNCC_CellClick);
             // 
             // NCCID
             // 

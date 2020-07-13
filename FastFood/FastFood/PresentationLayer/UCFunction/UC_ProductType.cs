@@ -55,6 +55,11 @@ namespace FastFood.PresentationLayer.UCFunction
                 txtLoaiSanPham.Text = dtListProductType.Rows[index].Cells["TenLoaiSP"].Value.ToString();
             }
         }
+        private void dtListProductType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dtListProductType.CurrentCell.RowIndex;
+            txtLoaiSanPham.Text = dtListProductType.Rows[index].Cells["TenLoaiSP"].Value.ToString();
+        }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {

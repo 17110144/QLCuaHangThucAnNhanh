@@ -51,7 +51,11 @@ namespace FastFood.PresentationLayer.UCFunction
                 txtTenNCC.Text = dtListNCC.Rows[index].Cells["TenNhaCungCap"].Value.ToString();
             }
         }
-
+        private void dtListNCC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dtListNCC.CurrentCell.RowIndex;
+            txtTenNCC.Text = dtListNCC.Rows[index].Cells["TenNhaCungCap"].Value.ToString();
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dtListNCC.SelectedRows.Count == 0)
@@ -157,5 +161,7 @@ namespace FastFood.PresentationLayer.UCFunction
             _sttButton(true, true, true, false, false, false);
             txtTenNCC.Text = "";
         }
+
+
     }
 }
