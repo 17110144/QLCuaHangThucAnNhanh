@@ -13,7 +13,7 @@ namespace FastFood.BusinessLayer
     class cls_Database
     {
         public static SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=FASTFOOD;Integrated Security=True");
-
+        
         public static void connectSQL()
         {
             try
