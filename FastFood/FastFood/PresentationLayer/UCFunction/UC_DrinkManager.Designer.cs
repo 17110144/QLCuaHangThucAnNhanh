@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnThem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -114,14 +114,14 @@
             this.btnThem.Location = new System.Drawing.Point(16, 128);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnThem.OnHovercolor = System.Drawing.Color.Black;
+            this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
             this.btnThem.Size = new System.Drawing.Size(125, 44);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "THÊM MÓN";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThem.Textcolor = System.Drawing.Color.AliceBlue;
+            this.btnThem.Textcolor = System.Drawing.Color.White;
             this.btnThem.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -155,7 +155,7 @@
             this.btnSua.Location = new System.Drawing.Point(147, 128);
             this.btnSua.Name = "btnSua";
             this.btnSua.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnSua.OnHovercolor = System.Drawing.Color.Black;
+            this.btnSua.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnSua.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSua.selected = false;
             this.btnSua.Size = new System.Drawing.Size(126, 44);
@@ -196,14 +196,14 @@
             this.btnXoa.Location = new System.Drawing.Point(279, 128);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnXoa.OnHovercolor = System.Drawing.Color.Black;
+            this.btnXoa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnXoa.OnHoverTextColor = System.Drawing.Color.White;
             this.btnXoa.selected = false;
             this.btnXoa.Size = new System.Drawing.Size(125, 44);
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnXoa.Textcolor = System.Drawing.Color.AliceBlue;
+            this.btnXoa.Textcolor = System.Drawing.Color.White;
             this.btnXoa.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -237,7 +237,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(73, 178);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnCapNhat.OnHovercolor = System.Drawing.Color.Black;
+            this.btnCapNhat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnCapNhat.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCapNhat.selected = false;
             this.btnCapNhat.Size = new System.Drawing.Size(125, 44);
@@ -278,7 +278,7 @@
             this.btnHuyBo.Location = new System.Drawing.Point(204, 178);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnHuyBo.OnHovercolor = System.Drawing.Color.Black;
+            this.btnHuyBo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnHuyBo.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHuyBo.selected = false;
             this.btnHuyBo.Size = new System.Drawing.Size(125, 44);
@@ -305,22 +305,22 @@
             // 
             this.dtListProduct.AllowUserToAddRows = false;
             this.dtListProduct.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dtListProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtListProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtListProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtListProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtListProduct.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dtListProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtListProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtListProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtListProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtListProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtListProduct.ColumnHeadersHeight = 50;
             this.dtListProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NCCID,
@@ -330,36 +330,36 @@
             this.GiaTien,
             this.GiamGia,
             this.SoLuong});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtListProduct.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtListProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtListProduct.DoubleBuffered = true;
             this.dtListProduct.EnableHeadersVisualStyles = false;
             this.dtListProduct.GridColor = System.Drawing.Color.MidnightBlue;
-            this.dtListProduct.HeaderBgColor = System.Drawing.Color.MidnightBlue;
+            this.dtListProduct.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.dtListProduct.HeaderForeColor = System.Drawing.Color.White;
             this.dtListProduct.Location = new System.Drawing.Point(6, 28);
             this.dtListProduct.MultiSelect = false;
             this.dtListProduct.Name = "dtListProduct";
             this.dtListProduct.ReadOnly = true;
             this.dtListProduct.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtListProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtListProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtListProduct.RowHeadersVisible = false;
             this.dtListProduct.RowHeadersWidth = 50;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtListProduct.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtListProduct.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtListProduct.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dtListProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtListProduct.Size = new System.Drawing.Size(857, 341);
@@ -442,6 +442,7 @@
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.BackColor = System.Drawing.Color.AliceBlue;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(39, 37);
             this.txtTimKiem.Name = "txtTimKiem";
@@ -476,6 +477,7 @@
             // 
             // txtMaNuocUong
             // 
+            this.txtMaNuocUong.BackColor = System.Drawing.Color.AliceBlue;
             this.txtMaNuocUong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNuocUong.Location = new System.Drawing.Point(121, 32);
             this.txtMaNuocUong.Name = "txtMaNuocUong";
@@ -516,6 +518,7 @@
             // 
             // txtSoLuong
             // 
+            this.txtSoLuong.BackColor = System.Drawing.Color.AliceBlue;
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(321, 33);
             this.txtSoLuong.Name = "txtSoLuong";
@@ -525,6 +528,7 @@
             // 
             // txtGiamGia
             // 
+            this.txtGiamGia.BackColor = System.Drawing.Color.AliceBlue;
             this.txtGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiamGia.Location = new System.Drawing.Point(342, 142);
             this.txtGiamGia.Name = "txtGiamGia";
@@ -544,6 +548,7 @@
             // 
             // txtGiaTien
             // 
+            this.txtGiaTien.BackColor = System.Drawing.Color.AliceBlue;
             this.txtGiaTien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.Location = new System.Drawing.Point(121, 143);
             this.txtGiaTien.Name = "txtGiaTien";
@@ -573,6 +578,7 @@
             // 
             // txtTenNuocUong
             // 
+            this.txtTenNuocUong.BackColor = System.Drawing.Color.AliceBlue;
             this.txtTenNuocUong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNuocUong.Location = new System.Drawing.Point(121, 71);
             this.txtTenNuocUong.Name = "txtTenNuocUong";

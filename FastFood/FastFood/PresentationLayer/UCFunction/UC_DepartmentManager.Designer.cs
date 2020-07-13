@@ -158,10 +158,10 @@
             this.dtList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -175,15 +175,15 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtList.DoubleBuffered = true;
             this.dtList.EnableHeadersVisualStyles = false;
             this.dtList.GridColor = System.Drawing.Color.MidnightBlue;
-            this.dtList.HeaderBgColor = System.Drawing.Color.MidnightBlue;
-            this.dtList.HeaderForeColor = System.Drawing.Color.LightCyan;
+            this.dtList.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
+            this.dtList.HeaderForeColor = System.Drawing.Color.White;
             this.dtList.Location = new System.Drawing.Point(6, 28);
             this.dtList.MultiSelect = false;
             this.dtList.Name = "dtList";
@@ -193,7 +193,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -262,14 +262,14 @@
             this.btnHuyBo.Location = new System.Drawing.Point(647, 175);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnHuyBo.OnHovercolor = System.Drawing.Color.Black;
+            this.btnHuyBo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnHuyBo.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHuyBo.selected = false;
             this.btnHuyBo.Size = new System.Drawing.Size(125, 44);
             this.btnHuyBo.TabIndex = 83;
             this.btnHuyBo.Text = "HỦY BỎ";
             this.btnHuyBo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHuyBo.Textcolor = System.Drawing.Color.LightCyan;
+            this.btnHuyBo.Textcolor = System.Drawing.Color.White;
             this.btnHuyBo.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -298,14 +298,14 @@
             this.btnCapNhat.Location = new System.Drawing.Point(516, 175);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnCapNhat.OnHovercolor = System.Drawing.Color.Black;
+            this.btnCapNhat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnCapNhat.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCapNhat.selected = false;
             this.btnCapNhat.Size = new System.Drawing.Size(125, 44);
             this.btnCapNhat.TabIndex = 82;
             this.btnCapNhat.Text = "CẬP NHẬT";
             this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCapNhat.Textcolor = System.Drawing.Color.LightCyan;
+            this.btnCapNhat.Textcolor = System.Drawing.Color.White;
             this.btnCapNhat.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -334,14 +334,14 @@
             this.btnXoa.Location = new System.Drawing.Point(385, 175);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnXoa.OnHovercolor = System.Drawing.Color.Black;
+            this.btnXoa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnXoa.OnHoverTextColor = System.Drawing.Color.White;
             this.btnXoa.selected = false;
             this.btnXoa.Size = new System.Drawing.Size(125, 44);
             this.btnXoa.TabIndex = 81;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnXoa.Textcolor = System.Drawing.Color.LightCyan;
+            this.btnXoa.Textcolor = System.Drawing.Color.White;
             this.btnXoa.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -370,14 +370,14 @@
             this.btnSua.Location = new System.Drawing.Point(253, 175);
             this.btnSua.Name = "btnSua";
             this.btnSua.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnSua.OnHovercolor = System.Drawing.Color.Black;
+            this.btnSua.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnSua.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSua.selected = false;
             this.btnSua.Size = new System.Drawing.Size(126, 44);
             this.btnSua.TabIndex = 80;
             this.btnSua.Text = "SỬA";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSua.Textcolor = System.Drawing.Color.LightCyan;
+            this.btnSua.Textcolor = System.Drawing.Color.White;
             this.btnSua.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -406,14 +406,14 @@
             this.btnThem.Location = new System.Drawing.Point(122, 175);
             this.btnThem.Name = "btnThem";
             this.btnThem.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnThem.OnHovercolor = System.Drawing.Color.Black;
+            this.btnThem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(13)))), ((int)(((byte)(92)))));
             this.btnThem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnThem.selected = false;
             this.btnThem.Size = new System.Drawing.Size(125, 44);
             this.btnThem.TabIndex = 79;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThem.Textcolor = System.Drawing.Color.LightCyan;
+            this.btnThem.Textcolor = System.Drawing.Color.White;
             this.btnThem.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
