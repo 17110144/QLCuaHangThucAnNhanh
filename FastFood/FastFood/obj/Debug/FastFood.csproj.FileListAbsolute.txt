@@ -45,3 +45,28 @@ C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\o
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DrinkManager.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Noti.resources
 C:\Users\hoang\OneDrive\HK6\OOSD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Home.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csprojAssemblyReference.cache
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_About.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.Forms.frm_BackupDatabase.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_ChangePassword.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_Connect.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_Login.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_Main.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.Forms.frm_RestoreDatabase.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_Splash.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Forms.frm_UserPermission.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DepartmentManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCFunction.UC_DrinkManager.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Home.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Noti.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_Salary.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.PresentationLayer.UCSytem.UC_System.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.Properties.Resources.resources
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.GenerateResource.cache
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.CoreCompileInputs.cache
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.exe
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.pdb
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.exe.config
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.exe
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\bin\Debug\FastFood.pdb
+D:\TaiLieuHocTap\Nam 3\OOAD\CuoiKy\QLCuaHangThucAnNhanh\FastFood\FastFood\obj\Debug\FastFood.csproj.CopyComplete

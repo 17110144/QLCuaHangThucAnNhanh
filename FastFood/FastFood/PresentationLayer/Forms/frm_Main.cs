@@ -31,14 +31,14 @@ namespace FastFood.Forms
         {
             InitializeComponent();
 
-            addControlsToPanel(_Home);
-            NguoiDungID = NguoiDungID_Login;
+            //addControlsToPanel(_Home);
+            //NguoiDungID = NguoiDungID_Login;
 
-            _Order.Visible = false;
-            _Personnel.Visible = false;
-            _Product.Visible = false;
-            _Salary.Visible = false;
-            _System.Visible = false;
+            //_Order.Visible = false;
+            //_Personnel.Visible = false;
+            //_Product.Visible = false;
+            //_Salary.Visible = false;
+            //_System.Visible = false;
         }
 
         public static frm_Main Instance
@@ -180,8 +180,8 @@ namespace FastFood.Forms
 
         private void _loadPermission()
         {
-
-            checkPer = (BusinessLayer.cls_Employess._checkPermission(NguoiDungID) == true) ? true : false;
+          bool   checkedPer = true;
+          //  checkPer = (BusinessLayer.cls_Employess._checkPermission(NguoiDungID) == true) ? true : false;
 
             if (checkPer == false)
             {

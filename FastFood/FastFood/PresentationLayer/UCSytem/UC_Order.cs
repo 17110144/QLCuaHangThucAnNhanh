@@ -25,11 +25,11 @@ namespace FastFood.PresentationLayer.UCSytem
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*
-            dtSearch.DataSource = lib.cls_Order._searchProduct(txtSearch.Text);
-            dtSearch.Columns["MaSP"].Width = 50;
-            dtSearch.Columns["TenSP"].Width = 210;
-            */
+            
+           // dtsearch.datasource = lib.cls_order._searchproduct(txtsearch.text);
+            //dtsearch.columns["masp"].width = 50;
+            //dtsearch.columns["tensp"].width = 210;
+            
         }
 
         private int _productSelect(string nameProduct, DataTable dt)
@@ -112,28 +112,28 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void UC_Order_Load(object sender, EventArgs e)
         {
-            /*
-            idEmployess = Forms.frm_Main.NguoiDungID;
-            tenNV = lib.cls_Employess._getInfoEmployess(idEmployess)[1];
-            nhanVienID = lib.cls_Employess._getInfoEmployess(idEmployess)[0];
-            txtSearch.Focus();
-            txtEmployess.Enabled = false;
+
+            //idemployess = forms.frm_main.nguoidungid;
+            //tennv = lib.cls_employess._getinfoemployess(idemployess)[1];
+            //nhanvienid = lib.cls_employess._getinfoemployess(idemployess)[0];
+            //txtsearch.focus();
+            //txtemployess.enabled = false;
 
             //tạo datacridview
-            tbOrder.Columns.Add("Mã SP");
-            tbOrder.Columns.Add("Tên SP");
-            tbOrder.Columns.Add("Số lượng");
-            tbOrder.Columns.Add("Giá tiền");
-            tbOrder.Columns.Add("Giảm giá");
+            //tborder.columns.add("mã sp");
+            //tborder.columns.add("tên sp");
+            //tborder.columns.add("số lượng");
+            //tborder.columns.add("giá tiền");
+            //tborder.columns.add("giảm giá");
             //set button về false
-            btnDone.Enabled = false;
-            btnPrintInvoice.Enabled = false;
-            txtMoney.Enabled = false;
-            txtDiscount.Enabled = false;
-            txtReturnPayment.Enabled = false;
+            //btndone.enabled = false;
+            //btnprintinvoice.enabled = false;
+            //txtmoney.enabled = false;
+            //txtdiscount.enabled = false;
+            //txtreturnpayment.enabled = false;
 
-            txtEmployess.Text = tenNV;
-            */
+            //txtemployess.text = tennv;
+
 
         }
 

@@ -29,7 +29,7 @@ namespace FastFood.BusinessLayer
         {
             string query = string.Format("SELECT QuanTri FROM tbl_NguoiDung WHERE NguoiDungID = '{0}'", id);
             DataTable dt = cls_Database.TableRead(query);
-            if(dt.Rows[0]["QuanTri"].ToString() == "0" || dt.Rows[0]["QuanTri"].ToString().ToLower() == "false")
+            if (dt.Rows[0]["QuanTri"].ToString() == "0" || dt.Rows[0]["QuanTri"].ToString().ToLower() == "false")
             {
                 return false;
             }

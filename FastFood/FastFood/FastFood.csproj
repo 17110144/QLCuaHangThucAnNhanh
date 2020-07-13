@@ -259,9 +259,6 @@
     <Folder Include="DBLayer\" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\TK\KFC_FASTFOOD\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add_20px.png" />
   </ItemGroup>
   <ItemGroup>

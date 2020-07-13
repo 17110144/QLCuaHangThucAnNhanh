@@ -12,7 +12,7 @@ namespace FastFood.BusinessLayer
 {
     class cls_Database
     {
-        public static SqlConnection conn = new SqlConnection(File.ReadAllText("config.env"));
+        public static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-22ODMT8;Initial Catalog=FASTFOOD;Integrated Security=True");
 
         public static void connectSQL()
         {

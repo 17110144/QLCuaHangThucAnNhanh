@@ -20,13 +20,13 @@ namespace FastFood.PresentationLayer.UCSytem
         }
         private void btnQuanLyMonAn_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_FoodManager"))
+            //if (!frm_main.instance.pnlcontainer.controls.containskey("uc_foodmanager"))
             //{
-            //    UC_FoodManager foodManager = new UC_FoodManager();
-            //    foodManager.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(foodManager);
+            //    uc_foodmanager foodmanager = new uc_foodmanager();
+            //    foodmanager.dock = dockstyle.fill;
+            //    frm_main.instance.pnlcontainer.controls.add(foodmanager);
             //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_FoodManager"].BringToFront();
+            //frm_main.instance.pnlcontainer.controls["uc_foodmanager"].bringtofront();
         }
 
         private void btnQuanLyNuocUong_Click(object sender, EventArgs e)
