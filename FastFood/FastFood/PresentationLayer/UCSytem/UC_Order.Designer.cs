@@ -69,7 +69,6 @@
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAddProduct = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDelProduct = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnPrintInvoice = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSaveDB = new Bunifu.Framework.UI.BunifuFlatButton();
             this.check = new System.Windows.Forms.ErrorProvider(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -125,7 +124,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtSearch.DefaultCellStyle = dataGridViewCellStyle3;
@@ -235,7 +234,7 @@
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtChoose.DefaultCellStyle = dataGridViewCellStyle8;
@@ -252,7 +251,7 @@
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtChoose.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
@@ -566,7 +565,7 @@
             this.btnDelProduct.IconVisible = true;
             this.btnDelProduct.IconZoom = 90D;
             this.btnDelProduct.IsTab = false;
-            this.btnDelProduct.Location = new System.Drawing.Point(129, 545);
+            this.btnDelProduct.Location = new System.Drawing.Point(188, 545);
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Normalcolor = System.Drawing.Color.MidnightBlue;
             this.btnDelProduct.OnHovercolor = System.Drawing.Color.Black;
@@ -579,41 +578,6 @@
             this.btnDelProduct.Textcolor = System.Drawing.Color.AliceBlue;
             this.btnDelProduct.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelProduct.Click += new System.EventHandler(this.btnDelProduct_Click);
-            // 
-            // btnPrintInvoice
-            // 
-            this.btnPrintInvoice.Activecolor = System.Drawing.Color.MidnightBlue;
-            this.btnPrintInvoice.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnPrintInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrintInvoice.BorderRadius = 5;
-            this.btnPrintInvoice.ButtonText = "IN HÓA ĐƠN";
-            this.btnPrintInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintInvoice.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPrintInvoice.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnPrintInvoice.Iconimage = null;
-            this.btnPrintInvoice.Iconimage_right = null;
-            this.btnPrintInvoice.Iconimage_right_Selected = null;
-            this.btnPrintInvoice.Iconimage_Selected = null;
-            this.btnPrintInvoice.IconMarginLeft = 0;
-            this.btnPrintInvoice.IconMarginRight = 0;
-            this.btnPrintInvoice.IconRightVisible = true;
-            this.btnPrintInvoice.IconRightZoom = 0D;
-            this.btnPrintInvoice.IconVisible = true;
-            this.btnPrintInvoice.IconZoom = 90D;
-            this.btnPrintInvoice.IsTab = false;
-            this.btnPrintInvoice.Location = new System.Drawing.Point(233, 545);
-            this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Normalcolor = System.Drawing.Color.MidnightBlue;
-            this.btnPrintInvoice.OnHovercolor = System.Drawing.Color.Black;
-            this.btnPrintInvoice.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPrintInvoice.selected = false;
-            this.btnPrintInvoice.Size = new System.Drawing.Size(112, 30);
-            this.btnPrintInvoice.TabIndex = 25;
-            this.btnPrintInvoice.Text = "IN HÓA ĐƠN";
-            this.btnPrintInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrintInvoice.Textcolor = System.Drawing.Color.AliceBlue;
-            this.btnPrintInvoice.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
             // 
             // btnSaveDB
             // 
@@ -667,7 +631,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnSaveDB);
-            this.Controls.Add(this.btnPrintInvoice);
             this.Controls.Add(this.btnDelProduct);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.btnCancel);
@@ -716,7 +679,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private Bunifu.Framework.UI.BunifuFlatButton btnAddProduct;
         private Bunifu.Framework.UI.BunifuFlatButton btnDelProduct;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPrintInvoice;
         private Bunifu.Framework.UI.BunifuFlatButton btnSaveDB;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalMoney;

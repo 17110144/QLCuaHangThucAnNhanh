@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using FastFood.Forms;
+using FastFood.BusinessLayer;
 
 namespace FastFood.PresentationLayer.UCSytem
 {
@@ -25,11 +27,11 @@ namespace FastFood.PresentationLayer.UCSytem
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*
-            dtSearch.DataSource = lib.cls_Order._searchProduct(txtSearch.Text);
+
+            dtSearch.DataSource = cls_Order._searchProduct(txtSearch.Text);
             dtSearch.Columns["MaSP"].Width = 50;
             dtSearch.Columns["TenSP"].Width = 210;
-            */
+
         }
 
         private int _productSelect(string nameProduct, DataTable dt)
@@ -112,10 +114,10 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void UC_Order_Load(object sender, EventArgs e)
         {
-            /*
-            idEmployess = Forms.frm_Main.NguoiDungID;
-            tenNV = lib.cls_Employess._getInfoEmployess(idEmployess)[1];
-            nhanVienID = lib.cls_Employess._getInfoEmployess(idEmployess)[0];
+            
+            idEmployess = frm_Main.NguoiDungID;
+            tenNV = cls_Employess._getInfoEmployess(idEmployess)[1];
+            nhanVienID = cls_Employess._getInfoEmployess(idEmployess)[0];
             txtSearch.Focus();
             txtEmployess.Enabled = false;
 
@@ -127,13 +129,12 @@ namespace FastFood.PresentationLayer.UCSytem
             tbOrder.Columns.Add("Giảm giá");
             //set button về false
             btnDone.Enabled = false;
-            btnPrintInvoice.Enabled = false;
             txtMoney.Enabled = false;
             txtDiscount.Enabled = false;
             txtReturnPayment.Enabled = false;
 
             txtEmployess.Text = tenNV;
-            */
+            
 
         }
 
@@ -192,7 +193,6 @@ namespace FastFood.PresentationLayer.UCSytem
             lblTotalMoney.Text = "0,00" + " VND";
 
             btnDone.Enabled = false;
-            btnPrintInvoice.Enabled = false;
             btnCancel.Enabled = true;
 
             txtSearch.Focus();
@@ -218,7 +218,6 @@ namespace FastFood.PresentationLayer.UCSytem
                 lblTotalMoney.Text = "0,00" + " VND";
                 txtSearch.Focus();
                 //set lại button 
-                btnPrintInvoice.Enabled = false;
                 btnDone.Enabled = false;
                 btnCancel.Enabled = true;
             }
@@ -231,118 +230,94 @@ namespace FastFood.PresentationLayer.UCSytem
              * Nếu bảng có mã HD001 và HD003 thì HD002 sẽ được thêm vào
             */
 
-            //DataTable dt = new DataTable();
-            ////hàm get cột MaHD
-            //dt = lib.cls_Order._getMaHD();
-            //// tạo temp để lưu số thứ tự của mã hd
-            //int temp = 0;
-            ////nếu danh sánh hd rỗng
-            //if (dt.Rows.Count == 0)
-            //{
-            //    temp = 1;
-            //}
-            //// nếu ds có 1 hóa đơn và mahd = HD001
-            //else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) == 1)
-            //{
-            //    temp = 2;
-            //}
-            ////nếu ds có 1 hóa đơn và mahd # HD001
-            //else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) > 1)
-            //{
-            //    temp = 1;
-            //}
-            ////nếu ds có > 1 hd
-            //else
-            //{
-            //    for (int i = 0; i < dt.Rows.Count - 1; i++)
-            //    {
-            //        if (int.Parse(dt.Rows[i + 1][0].ToString().Substring(2, 3)) - int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) > 1)
-            //        {
-            //            temp = int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) + 1;
-            //            break;
-            //        }
-            //    }
+            DataTable dt = new DataTable();
+            //hàm get cột MaHD
+            dt = cls_Order._getMaHD();
+            // tạo temp để lưu số thứ tự của mã hd
+            int temp = 0;
+            //nếu danh sánh hd rỗng
+            if (dt.Rows.Count == 0)
+            {
+                temp = 1;
+            }
+            // nếu ds có 1 hóa đơn và mahd = HD001
+            else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) == 1)
+            {
+                temp = 2;
+            }
+            //nếu ds có 1 hóa đơn và mahd # HD001
+            else if (dt.Rows.Count == 1 && int.Parse(dt.Rows[0][0].ToString().Substring(2, 3)) > 1)
+            {
+                temp = 1;
+            }
+            //nếu ds có > 1 hd
+            else
+            {
+                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                {
+                    if (int.Parse(dt.Rows[i + 1][0].ToString().Substring(2, 3)) - int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) > 1)
+                    {
+                        temp = int.Parse(dt.Rows[i][0].ToString().Substring(2, 3)) + 1;
+                        break;
+                    }
+                }
 
-            //    if (temp == 0)
-            //    {
-            //        temp = int.Parse(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(2, 3)) + 1;
-            //    }
-            //}
+                if (temp == 0)
+                {
+                    temp = int.Parse(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(2, 3)) + 1;
+                }
+            }
 
-            //if (temp < 10)
-            //{
-            //    return "HD00" + temp;
-            //}
-            //if (temp < 100)
-            //{
-            //    return "HD0" + temp;
-            //}
-            //return "HD" + temp;
+            if (temp < 10)
+            {
+                return "HD00" + temp;
+            }
+            if (temp < 100)
+            {
+                return "HD0" + temp;
+            }
+            return "HD" + temp;
             return "";
         }
 
         private void btnSaveDB_Click(object sender, EventArgs e)
         {
-            //if (txtUser.Text == "" || dtChoose.Rows.Count == 0 || txtReceive.Text == "")
-            //{
-            //    MessageBox.Show("Vui lòng kiểm tra lại thông tin đơn hàng và danh sách món ăn !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    txtUser.Focus();
-            //}
-            //else
-            //{
-            //    maHD = _GenMaHD();
-
-            //    int receive = int.Parse(txtReceive.Text);
-            //    int toltalMoney = _sumPrice(tbOrder, 3) - _sumPrice(tbOrder, 4);
-
-            //    if (receive >= toltalMoney)
-            //    {
-            //        if (lib.cls_Order._addNewHD(maHD, int.Parse(nhanVienID), txtUser.Text, toltalMoney) == true)
-            //        {
-            //            MessageBox.Show("Đã lưu đơn hàng vào csdl", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            for (int i = 0; i < dtChoose.Rows.Count; i++)
-            //            {
-            //                lib.cls_Order._updateCTHD(maHD, tbOrder.Rows[i][0].ToString(), Convert.ToInt32(tbOrder.Rows[i][2].ToString()));
-            //                lib.cls_Order._updateSP(tbOrder.Rows[i][0].ToString(), Convert.ToInt32(tbOrder.Rows[i][2].ToString()));
-            //            }
-
-            //            btnPrintInvoice.Enabled = true;
-            //            btnDone.Enabled = true;
-            //            btnCancel.Enabled = false;
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Lỗi khi thêm hóa đơn mới. Vui lòng kiểm tra và thử lại !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Vui lòng kiểm tra tiền nhận từ khách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
-        }
-
-        private void btnPrintInvoice_Click(object sender, EventArgs e)
-        {
-            /*
-            string _money = string.Format(new CultureInfo("vi-VN"), "{0:#,##}", Convert.ToInt32(txtMoney.Text));
-            string _refund = string.Format(new CultureInfo("vi-VN"), "{0:#,##}", Convert.ToInt32(txtReturnPayment.Text));
-            string _receive = string.Format(new CultureInfo("vi-VN"), "{0:#,##}", Convert.ToInt32(txtReceive.Text));
-            string _discount = string.Format(new CultureInfo("vi-VN"), "{0:#,##}", Convert.ToInt32(txtDiscount.Text));
-            string _totalMoney = lblTotalMoney.Text;
-            _totalMoney = _totalMoney.Replace(" VND", "");
-            using (Forms.frm_PrintInvoice printInvoice = new Forms.frm_PrintInvoice())
+            if (txtUser.Text == "" || dtChoose.Rows.Count == 0 || txtReceive.Text == "")
             {
-
-                printInvoice._numInvoice = maHD;
-                printInvoice._money = _money;
-                printInvoice._refund = _refund;
-                printInvoice._receive = _receive;
-                printInvoice._discount = _discount;
-                printInvoice._total = _totalMoney;
-                printInvoice.ShowDialog();
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin đơn hàng và danh sách món ăn !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUser.Focus();
             }
-            */
+            else
+            {
+                maHD = _GenMaHD();
+
+                int receive = int.Parse(txtReceive.Text);
+                int toltalMoney = _sumPrice(tbOrder, 3) - _sumPrice(tbOrder, 4);
+
+                if (receive >= toltalMoney)
+                {
+                    if (cls_Order._addNewHD(maHD, int.Parse(nhanVienID), txtUser.Text, toltalMoney) == true)
+                    {
+                        MessageBox.Show("Đã lưu đơn hàng vào csdl", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        for (int i = 0; i < dtChoose.Rows.Count; i++)
+                        {
+                            cls_Order._updateCTHD(maHD, tbOrder.Rows[i][0].ToString(), Convert.ToInt32(tbOrder.Rows[i][2].ToString()));
+                            cls_Order._updateSP(tbOrder.Rows[i][0].ToString(), Convert.ToInt32(tbOrder.Rows[i][2].ToString()));
+                        }
+
+                        btnDone.Enabled = true;
+                        btnCancel.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi thêm hóa đơn mới. Vui lòng kiểm tra và thử lại !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng kiểm tra tiền nhận từ khách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void txtReceive_TextChanged(object sender, EventArgs e)

@@ -54,13 +54,13 @@ namespace FastFood.PresentationLayer.UCSytem
 
         private void btnQuanLyNCC_Click(object sender, EventArgs e)
         {
-            //if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_NCCManager"))
-            //{
-            //    UC_NCCManager nCCManager = new UC_NCCManager();
-            //    nCCManager.Dock = DockStyle.Fill;
-            //    frm_Main.Instance.pnlContainer.Controls.Add(nCCManager);
-            //}
-            //frm_Main.Instance.pnlContainer.Controls["UC_NCCManager"].BringToFront();
+            if (!frm_Main.Instance.pnlContainer.Controls.ContainsKey("UC_NCCManager"))
+            {
+                UC_NCCManager nCCManager = new UC_NCCManager();
+                nCCManager.Dock = DockStyle.Fill;
+                frm_Main.Instance.pnlContainer.Controls.Add(nCCManager);
+            }
+            frm_Main.Instance.pnlContainer.Controls["UC_NCCManager"].BringToFront();
         }
     }
 }
