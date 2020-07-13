@@ -39,13 +39,13 @@ namespace FastFood.PresentationLayer.UCFunction
         }
         private void UC_UserManager_Load(object sender, EventArgs e)
         {
-            DataTable dt = cls_Employess._getDeparment();
+         //   DataTable dt = cls_Employess._getDeparment();
             DataTable dtlist = cls_Employess._getUserPermission();
             _sttButton(true, false, true, false, false, false);
             _reset();
             cmbBoPhan.ValueMember = "BoPhanID";
             cmbBoPhan.DisplayMember = "TenBoPhan";
-            cmbBoPhan.DataSource = dt;
+       //     cmbBoPhan.DataSource = dt;
             dtList.DataSource = dtlist;
         }
 

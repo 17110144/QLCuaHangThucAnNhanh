@@ -30,7 +30,7 @@ namespace FastFood.PresentationLayer.UCFunction
         private void UC_TimeSheetManager_Load(object sender, EventArgs e)
         {
             _format();
-            cmbBoPhan.DataSource = cls_Employess._getDeparment();
+      //      cmbBoPhan.DataSource = cls_Employess._getDeparment();
             cmbBoPhan.ValueMember = "BoPhanID";
             cmbBoPhan.DisplayMember = "TenBoPhan";
             dtList.AutoGenerateColumns = false;
