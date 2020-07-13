@@ -67,17 +67,26 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getChamCong(string thang, int boPhanID)
+        public static DataTable _getChamCong(string thang)
         {
             try
             {
-                string query = string.Format(@"SELECT a.BoPhanID, a.NhanVienID, b.MaNV, b.TenNV, c.ChamCongID, 
-                                            c.NgayCongChuan, c.NgayDiLam, c.NgayNghi, c.NgayTinhLuong, c.GhiChu, c.TrangThai, c.Thang
-                                            FROM tbl_NhanVienBoPhan a
-                                            INNER JOIN tbl_NhanVien b ON a.NhanVienID = b.NhanVienID
-                                            LEFT JOIN tbl_ChamCong c ON c.BoPhanID = a.BoPhanID AND c.NhanVienID = a.NhanVienID and c.Thang = '{0}'
-                                            WHERE a.BoPhanID = {1}", thang, boPhanID);
-                return cls_Database.TableRead(query);
+                string firstQuery = string.Format(@"select * from tbl_ChamCong where Thang ='{0}'", thang);
+                var data = cls_Database.TableRead(firstQuery);
+                if (data.Rows.Count == 0)
+                {
+                    string query = string.Format(@"select b.NhanVienID,b.MaNV,b.TenNV,a.ChamCongID,a.NgayCongChuan,a.NgayDiLam,a.NgayNghi,a.NgayTinhLuong,a.GhiChu,a.TrangThai,a.Thang
+from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_NhanVien b on a.NhanVienID = b.NhanVienID", thang);
+                    return cls_Database.TableRead(query);
+
+                }
+                else
+                {
+                    string query = string.Format(@"select b.NhanVienID,b.MaNV,b.TenNV,a.ChamCongID,a.NgayCongChuan,a.NgayDiLam,a.NgayNghi,a.NgayTinhLuong,a.GhiChu,a.TrangThai,a.Thang
+    from tbl_ChamCong a right join tbl_NhanVien b on a.NhanVienID = b.NhanVienID where a.Thang ='{0}'",thang);
+                    return cls_Database.TableRead(query);
+
+                }
             }
             catch (Exception)
             {
@@ -86,11 +95,11 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _insertChamCong(string Thang, int NgayCongChuan, int BoPhanID, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu)
+        public static bool _insertChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu)
         {
             try
             {
-                string query = string.Format("INSERT INTO tbl_ChamCong(Thang, NgayCongChuan, BoPhanID, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, TrangThai) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', N'{7}', 1)", Thang, NgayCongChuan, BoPhanID, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
+                string query = string.Format("INSERT INTO tbl_ChamCong(Thang, NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, TrangThai) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', N'{6}', 1)", Thang, NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
                 cls_Database.AED(query);
                 return true;
             }
@@ -100,11 +109,11 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _updateChamCong(string Thang, int NgayCongChuan, int BoPhanID, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu, string ChamCongID)
+        public static bool _updateChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu, string ChamCongID)
         {
             try
             {
-                string query = string.Format("UPDATE tbl_ChamCong SET Thang = '{0}', NgayCongChuan = '{1}', BoPhanID = '{2}', NhanVienID = '{3}', NgayDiLam = '{4}', NgayNghi = '{5}', NgayTinhLuong = '{6}', GhiChu = N'{7}' WHERE ChamCongID = '{8}'", Thang, NgayCongChuan, BoPhanID, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
+                string query = string.Format("UPDATE tbl_ChamCong SET Thang = '{0}', NgayCongChuan = '{1}', NhanVienID = '{2}', NgayDiLam = '{3}', NgayNghi = '{4}', NgayTinhLuong = '{5}', GhiChu = N'{6}' WHERE ChamCongID = '{7}'", Thang, NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
                 cls_Database.AED(query);
                 return true;
             }

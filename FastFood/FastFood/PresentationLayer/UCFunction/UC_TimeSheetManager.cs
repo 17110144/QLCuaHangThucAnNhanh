@@ -30,17 +30,14 @@ namespace FastFood.PresentationLayer.UCFunction
         private void UC_TimeSheetManager_Load(object sender, EventArgs e)
         {
             _format();
-            cmbBoPhan.DataSource = cls_Employess._getDeparment();
-            cmbBoPhan.ValueMember = "BoPhanID";
-            cmbBoPhan.DisplayMember = "TenBoPhan";
-            dtList.AutoGenerateColumns = false;
         }
 
         private void btnHienThi_Click(object sender, EventArgs e)
         {
-            if (cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM"), Convert.ToInt32(cmbBoPhan.SelectedValue)) != null)
+
+            if (cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM")) != null)
             {
-                dtList.DataSource = cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM"), Convert.ToInt32(cmbBoPhan.SelectedValue));
+                dtList.DataSource = cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM"));
             }
             else
             {
@@ -67,7 +64,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
                     if (ChamCongID == "")
                     {
-                        bool _insertChamCong = cls_Salary._insertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, Convert.ToInt32(cmbBoPhan.SelectedValue), NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
+                        bool _insertChamCong = cls_Salary._insertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
                         if (_insertChamCong)
                         {
                             flag++;
@@ -77,7 +74,7 @@ namespace FastFood.PresentationLayer.UCFunction
                     {
                         if (TrangThai == "1")
                         {
-                            bool _updateChamCong = cls_Salary._updateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, Convert.ToInt32(cmbBoPhan.SelectedValue), NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
+                            bool _updateChamCong = cls_Salary._updateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
                             if (_updateChamCong)
                             {
                                 flag++;
