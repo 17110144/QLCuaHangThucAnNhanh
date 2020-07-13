@@ -10,7 +10,7 @@ namespace FastFood.BusinessLayer
 {
     class cls_Salary
     {
-        public static DataTable _getChucDanh()
+        public DataTable _getChucDanh()
         {
             string query = "SELECT * FROM tbl_ChucDanh";
             return cls_Database.TableRead(query);
@@ -67,7 +67,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static DataTable _getChamCong(string thang)
+        public DataTable GetChamCong(string thang)
         {
             try
             {
@@ -95,7 +95,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
             }
         }
 
-        public static bool _insertChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu)
+        public bool InsertChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu)
         {
             try
             {
@@ -109,7 +109,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
             }
         }
 
-        public static bool _updateChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu, string ChamCongID)
+        public bool UpdateChamCong(string Thang, int NgayCongChuan, int NhanVienID, int NgayDiLam, int NgayNghi, int NgayTinhLuong, string GhiChu, string ChamCongID)
         {
             try
             {
@@ -122,7 +122,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
                 return false;
             }
         }
-        public static bool _updateTrangThai(string ChamCongID)
+        public bool UpdateTrangThai(string ChamCongID)
         {
             try
             {

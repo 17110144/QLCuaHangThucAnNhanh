@@ -14,6 +14,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_TimeSheetManager : UserControl
     {
+        cls_Salary salary = new cls_Salary();
         public UC_TimeSheetManager()
         {
             InitializeComponent();
@@ -35,9 +36,9 @@ namespace FastFood.PresentationLayer.UCFunction
         private void btnHienThi_Click(object sender, EventArgs e)
         {
 
-            if (cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM")) != null)
+            if (salary.GetChamCong(dtpThang.Value.ToString("yyyyMM")) != null)
             {
-                dtList.DataSource = cls_Salary._getChamCong(dtpThang.Value.ToString("yyyyMM"));
+                dtList.DataSource = salary.GetChamCong(dtpThang.Value.ToString("yyyyMM"));
             }
             else
             {
@@ -64,7 +65,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
                     if (ChamCongID == "")
                     {
-                        bool _insertChamCong = cls_Salary._insertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
+                        bool _insertChamCong = salary.InsertChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu);
                         if (_insertChamCong)
                         {
                             flag++;
@@ -74,7 +75,7 @@ namespace FastFood.PresentationLayer.UCFunction
                     {
                         if (TrangThai == "1")
                         {
-                            bool _updateChamCong = cls_Salary._updateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
+                            bool _updateChamCong = salary.UpdateChamCong(dtpThang.Value.ToString("yyyyMM"), NgayCongChuan, NhanVienID, NgayDiLam, NgayNghi, NgayTinhLuong, GhiChu, ChamCongID);
                             if (_updateChamCong)
                             {
                                 flag++;
@@ -108,7 +109,7 @@ namespace FastFood.PresentationLayer.UCFunction
                         if (row.Cells["TrangThai"].Value.ToString() == "1")
                         {
                             string ChamCongID = row.Cells["ChamCongID"].Value.ToString();
-                            if (!cls_Salary._updateTrangThai(ChamCongID)) return;
+                            if (!salary.UpdateTrangThai(ChamCongID)) return;
 
                             string ThangKeLuong = row.Cells["Thang"].Value.ToString();
                             int NhanVienID = Convert.ToInt32(row.Cells["NhanVienID"].Value);
