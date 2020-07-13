@@ -43,18 +43,13 @@ namespace FastFood.PresentationLayer.UCFunction
             _sttButton(true, false, true, false, false, false);
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             dtList.DataSource = cls_Employess._getNhanVienChucDanh();
-           // DataTable getBoPhan = cls_Employess._getDeparment();
+            DataTable getBoPhan = cls_Employess._getDeparment();
             DataTable getChucDanh = cls_Employess._getOffice();
 
-            
+
             cmbChucDanh.ValueMember = "ChucDanhID";
             cmbChucDanh.DisplayMember = "TenChucDanh";
             cmbChucDanh.DataSource = getChucDanh;
-           
-            cmbTenNV.DataSource = dtList.DataSource;
-
-            cmbTenNV.DisplayMember = "TenNV";
-            cmbTenNV.ValueMember = "NhanVienID";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -181,9 +176,7 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 int index = dtList.CurrentCell.RowIndex;
                 _nhanVienID = Convert.ToInt32(dtList.Rows[index].Cells["NhanVienID"].Value);
-                cmbTenNV.DisplayMember = dtList.Rows[index].Cells["TenNV"].Value.ToString();
-                cmbTenNV.SelectedValue = dtList.Rows[index].Cells["NhanVienID"].Value.ToString();
-                //cmbTenNV.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["TenNV"].Value);
+                cmbTenNV.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["NhanVienID"].Value);
                 cmbChucDanh.SelectedValue = Convert.ToInt32(dtList.Rows[index].Cells["ChucDanhID"].Value);
                 btnSua.Enabled = true;
             }

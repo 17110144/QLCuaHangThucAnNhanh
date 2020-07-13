@@ -50,13 +50,13 @@ namespace FastFood.PresentationLayer.UCFunction
             AutoValidate = AutoValidate.EnableAllowFocusChange;
 
             DataTable nhanVien = BusinessLayer.cls_Employess._getProfileName();
-          //  DataTable boPhan = BusinessLayer.cls_Employess._getDeparment();
+            DataTable boPhan = BusinessLayer.cls_Employess._getDeparment();
 
             cmbTenNV.DataSource = nhanVien;
             cmbTenNV.ValueMember = "NhanVienID";
             cmbTenNV.DisplayMember = "TenNV";
 
-        //    cmbBoPhan.DataSource = boPhan;
+            cmbBoPhan.DataSource = boPhan;
             cmbBoPhan.ValueMember = "BoPhanID";
             cmbBoPhan.DisplayMember = "TenBoPhan";
 

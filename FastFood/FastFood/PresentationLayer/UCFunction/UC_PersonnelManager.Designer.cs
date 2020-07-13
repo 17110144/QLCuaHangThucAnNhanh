@@ -590,7 +590,6 @@
             this.dtListEmployess.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtListEmployess.Size = new System.Drawing.Size(838, 272);
             this.dtListEmployess.TabIndex = 1;
-            this.dtListEmployess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListEmployess_CellClick);
             // 
             // NhanVienID
             // 

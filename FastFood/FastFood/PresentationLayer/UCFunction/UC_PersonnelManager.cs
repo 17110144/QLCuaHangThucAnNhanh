@@ -16,7 +16,6 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_PersonnelManager : UserControl
     {
-       // public cls_Salary cls_salary = new cls_Salary();
         private int check = 0;
         private int nhanvienID = 0;
         public UC_PersonnelManager()
@@ -127,6 +126,14 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Người Dùng trước khi xóa nhân viên.");
             }
+            if (!cls_Employess._checkInHoSoNhanVien(id))
+            {
+                msg.Add("Vui lòng xóa nhân viên này trong Hồ Sơ Nhân Viên trước khi xóa nhân viên.");
+            }
+            if (!cls_Employess._checkInNhanVienBoPhan(id))
+            {
+                msg.Add("Vui lòng xóa nhân viên này trong Bộ Phận trước khi xóa nhân viên.");
+            }
             if (!cls_Employess._checkInNhanVienChucDanh(id))
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Chức Danh trước khi xóa nhân viên.");
@@ -135,10 +142,6 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 msg.Add("Vui lòng xóa nhân viên này trong Hóa Đơn trước khi xóa nhân viên.");
             }
-            if(!cls_Salary.CheckChamCong(id))
-            {
-                msg.Add("Nhân viên tồn tại trong bảng chấm công. Không thể xoá nhân viên.");
-            }    
             return msg;
         }
         private void UC_PersonnelManager_Load(object sender, EventArgs e)
@@ -149,48 +152,21 @@ namespace FastFood.PresentationLayer.UCFunction
              * Source: https://doc.microsoft.com
              */
             this.AutoValidate = AutoValidate.EnableAllowFocusChange;
-            //cmbGioiTinh.DataSource = cls_Employess._getGender();
+            cmbGioiTinh.DataSource = cls_Employess._getGender();
+            cmbGioiTinh.ValueMember = "GioiTinhID";
+            cmbGioiTinh.DisplayMember = "GioiTinh";
             dtListEmployess.AutoGenerateColumns = false;
             dtListEmployess.DataSource = cls_Employess._showEmployess();
             _formatDT();
             _reset();
             _sttButton(true, true, true, false, false, false);
 
-            //cmbGioiTinh.ValueMember = dtListEmployess;
-            //cmbGioiTinh.DisplayMember = "GioiTinh";
-            //cmbGioiTinh.ValueMember = 
-            //Object[] obj = new Object[2];
-            //obj[0] = new { display = "Nam", value = true };
-            //obj[1] = new { display = "Nữ", value = false };
-            //cmbGioiTinh.DataSource = obj;
-            //cmbGioiTinh.DisplayMember = "display";
-            //cmbGioiTinh.ValueMember = "value";
-
-            // Dictionary<string, string> test = new Dictionary<string, string>();
-            // test.Add("True", "Nam");
-            // test.Add("False", "Nữ");
-            //// test.Add("3", "dfdfdf");
-            // cmbGioiTinh.DataSource = new BindingSource(test, null);
-            // cmbGioiTinh.DisplayMember = "Value";
-            // cmbGioiTinh.ValueMember = "Key";
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Key", typeof(string));
-            dataTable.Columns.Add("Value", typeof(string));
-            dataTable.Rows.Add("False", "Nữ");
-            dataTable.Rows.Add("True", "Nam");
-            cmbGioiTinh.DataSource = dataTable;
-            cmbGioiTinh.DisplayMember = "Value";
-            cmbGioiTinh.ValueMember = "Key";
-          //  cmbGioiTinh.
-           // cmbGioiTinh.ValueMember = 
-
             cmbFilter.ValueMember = "Value";
             cmbFilter.DisplayMember = "Text";
             var items = new[] {
                 new { Text = "Tên NV", Value = "TenNV" },
                 new { Text = "Số CMND", Value = "CMND" },
-                new { Text = "Số điện thoại", Value = "SDT" },
-               // new {Text = "Giới tính", Value = "GioiTinh"}
+                new { Text = "Số điện thoại", Value = "SDT" }
             };
             cmbFilter.DataSource = items;
         }
@@ -237,7 +213,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 txtDiaChi.Text = dtListEmployess.Rows[index].Cells["DiaChi"].Value.ToString();
                 txtEmail.Text = dtListEmployess.Rows[index].Cells["Email"].Value.ToString();
                 txtSDT.Text = dtListEmployess.Rows[index].Cells["SDT"].Value.ToString();
-                cmbGioiTinh.SelectedValue =dtListEmployess.Rows[index].Cells["GioiTinh"].Value.ToString();
+                cmbGioiTinh.SelectedValue = Convert.ToBoolean(dtListEmployess.Rows[index].Cells["GioiTinhID"].Value.ToString());
                 cbDiLam.Checked = Convert.ToBoolean(dtListEmployess.Rows[index].Cells["TrangThaiID"].Value.ToString());
             }
         }
@@ -257,7 +233,7 @@ namespace FastFood.PresentationLayer.UCFunction
             else
             {
                 int index = dtListEmployess.CurrentCell.RowIndex;
-                int id = Convert.ToInt32(dtListEmployess.Rows[index].Cells[0].Value);
+                int id = Convert.ToInt32(dtListEmployess.Rows[index].Cells["MaNV"].Value);
 
                 DialogResult result = MessageBox.Show("Bạn muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -302,12 +278,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 {
                     string genMaNV = _genIdEmployess();
                     string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-                    int gender;
-                    if (cmbGioiTinh.SelectedValue.ToString() == "False")
-                        gender = 0;
-                    else
-                        gender = 1;
-                    bool addEmployess = cls_Employess._addEmployess(genMaNV, txtTenNV.Text, dob,gender, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
+                    bool addEmployess = cls_Employess._addEmployess(genMaNV, txtTenNV.Text, dob, Convert.ToInt32(cmbGioiTinh.SelectedValue), txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
 
                     if (addEmployess == true)
                     {
@@ -326,13 +297,7 @@ namespace FastFood.PresentationLayer.UCFunction
                 else
                 {
                     string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-                    int gender;
-                    if (cmbGioiTinh.SelectedValue.ToString() == "False")
-                        gender = 0;
-                    else
-                        gender = 1;
-
-                        bool updateEmployess = cls_Employess._updateEmployess(nhanvienID, txtMaNV.Text, txtTenNV.Text, dob, gender, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
+                    bool updateEmployess = cls_Employess._updateEmployess(nhanvienID, txtMaNV.Text, txtTenNV.Text, dob, Convert.ToInt32(cmbGioiTinh.SelectedValue), txtDiaChi.Text, txtSDT.Text, txtEmail.Text, txtCMND.Text, Convert.ToInt32(cbDiLam.Checked));
 
                     if (updateEmployess == true)
                     {
@@ -448,37 +413,6 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 errorProvider.SetError(txtSDT, "");
             }
-        }
-
-        private void dtListEmployess_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int r = dtListEmployess.CurrentCell.RowIndex;
-
-            txtMaNV.Text = dtListEmployess.Rows[r].Cells[1].Value.ToString();
-            txtTenNV.Text = dtListEmployess.Rows[r].Cells[2].Value.ToString();
-            //string dob = dtpNgaySinh.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-             dtpNgaySinh.Value.ToString(dtListEmployess.Rows[r].Cells[3].Value.ToString()) ;
-            txtCMND.Text = dtListEmployess.Rows[r].Cells[4].Value.ToString();
-            txtDiaChi.Text = dtListEmployess.Rows[r].Cells[5].Value.ToString();
-            txtEmail.Text = dtListEmployess.Rows[r].Cells[6].Value.ToString();
-            txtSDT.Text = dtListEmployess.Rows[r].Cells[7].Value.ToString();
-
-            if (dtListEmployess.Rows[r].Cells[8].Value.ToString() == "True")
-            {
-                cmbGioiTinh.SelectedIndex = 1;
-
-                //cmbGioiTinh.ValueMember = "True";
-            }
-            else
-            {
-                //cmbGioiTinh.DisplayMember = "Nữ";
-                cmbGioiTinh.SelectedIndex = 0;
-                //   cmbGioiTinh.ValueMember = "False";
-            }
-            cbDiLam.Checked = Convert.ToBoolean(dtListEmployess.Rows[9].Cells["TrangThaiID"].Value.ToString());
-            //  DataSet tendanhMuc = danhMuc.Find(dtListEmployess.Rows[r].Cells[8].Value.ToString());
-
-            //cbbDanhMuc.Text = dtListEmployess.Rows[r].Cells[8].Value.ToString();
         }
     }
 }
