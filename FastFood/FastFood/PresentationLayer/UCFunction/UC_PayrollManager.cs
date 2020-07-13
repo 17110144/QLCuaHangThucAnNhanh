@@ -14,6 +14,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_PayrollManager : UserControl
     {
+        cls_Salary salary = new cls_Salary();
         public UC_PayrollManager()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void btnTinhLuong_Click(object sender, EventArgs e)
         {
-            DataTable dt = cls_Salary._getChiTietBanKeLuong(dtpThang.Value.ToString("yyyyMM"));
+            DataTable dt = salary.GetChiTietBanKeLuong(dtpThang.Value.ToString("yyyyMM"));
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không có bản kê lương nào  trong tháng này được tính. Vui lòng chấm công trước khi tính lương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -64,7 +65,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
                     if (ChiTietBanKeLuongID != "" && TrangThai == "1")
                     {
-                        bool _updateBanKeLuong = cls_Salary._updateChiTietBanKeLuong(TienLuong, PhuCap, TongLuong, ThucLinh, ChiTietBanKeLuongID);
+                        bool _updateBanKeLuong = salary.UpdateChiTietBanKeLuong(TienLuong, PhuCap, TongLuong, ThucLinh, ChiTietBanKeLuongID);
                         if (_updateBanKeLuong)
                         {
                             flag++;
@@ -93,7 +94,7 @@ namespace FastFood.PresentationLayer.UCFunction
                     if (row.Cells["TrangThai"].Value.ToString() == "1")
                     {
                         string ChiTietBanKeLuongID = row.Cells["ChiTietBanKeLuongID"].Value.ToString();
-                        bool _updateTrangThai = cls_Salary._updateTrangThaiBanKeLuong(ChiTietBanKeLuongID);
+                        bool _updateTrangThai = salary.UpdateTrangThaiBanKeLuong(ChiTietBanKeLuongID);
                         if (_updateTrangThai)
                         {
                             flag++;

@@ -116,7 +116,7 @@ namespace FastFood.PresentationLayer.UCFunction
                             int NgayCongChuan = Convert.ToInt32(row.Cells["NgayCongChuan"].Value);
                             int NgayTinhLuong = Convert.ToInt32(row.Cells["NgayTinhLuong"].Value);
 
-                            bool _insertChiTietLuong = cls_Salary._insertChiTietLuong(ThangKeLuong, NhanVienID, NgayCongChuan, NgayTinhLuong);
+                            bool _insertChiTietLuong = salary.InsertChiTietLuong(ThangKeLuong, NhanVienID, NgayCongChuan, NgayTinhLuong);
                             if (_insertChiTietLuong)
                             {
                                 flag++;

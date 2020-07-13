@@ -16,6 +16,7 @@ namespace FastFood.PresentationLayer.UCFunction
 {
     public partial class UC_SalaryManager : UserControl
     {
+        cls_Salary salary = new cls_Salary();
         private int check = 0;
         private int _chucDanhID = 0;
         public UC_SalaryManager()
@@ -65,7 +66,7 @@ namespace FastFood.PresentationLayer.UCFunction
             _sttButton(true, false, true, false, false, false);
             this.AutoValidate = AutoValidate.EnableAllowFocusChange;
             dtList.AutoGenerateColumns = false;
-            dtList.DataSource = cls_Salary._getChucDanh();
+            dtList.DataSource = salary.GetChucDanh();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -92,19 +93,19 @@ namespace FastFood.PresentationLayer.UCFunction
                 DialogResult result = MessageBox.Show("Bạn muốn xóa lương chức danh " + txtChucDanh.Text + "?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (!cls_Salary._checkChucDanh(_chucDanhID))
+                    if (!salary.CheckChucDanh(_chucDanhID))
                     {
                         MessageBox.Show("Vui lòng xóa bản ghi trong thông tin nhân viên trước.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        bool _delCD = cls_Salary._delChucDanh(_chucDanhID);
+                        bool _delCD = salary.DelChucDanh(_chucDanhID);
                         if (_delCD)
                         {
                             MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             _sttButton(true, false, true, false, false, false);
                             _reset();
-                            dtList.DataSource = cls_Salary._getChucDanh();
+                            dtList.DataSource = salary.GetChucDanh();
                             _chucDanhID = 0;
                         }
                         else
@@ -132,13 +133,13 @@ namespace FastFood.PresentationLayer.UCFunction
             {
                 if (check == 1)
                 {
-                    bool _insertCD = cls_Salary._insertChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text);
+                    bool _insertCD = salary.InsertChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text);
                     if (_insertCD)
                     {
                         MessageBox.Show("Thêm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);
                         _reset();
-                        dtList.DataSource = cls_Salary._getChucDanh();
+                        dtList.DataSource = salary.GetChucDanh();
                     }
                     else
                     {
@@ -147,13 +148,13 @@ namespace FastFood.PresentationLayer.UCFunction
                 }
                 else
                 {
-                    bool _updateCD = cls_Salary._updateChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text, _chucDanhID);
+                    bool _updateCD = salary.UpdateChucDanh(txtChucDanh.Text, txtLuongCung.Text, txtPhuCap.Text, _chucDanhID);
                     if (_updateCD)
                     {
                         MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _sttButton(true, false, true, false, false, false);
                         _reset();
-                        dtList.DataSource = cls_Salary._getChucDanh();
+                        dtList.DataSource = salary.GetChucDanh();
                         _chucDanhID = 0;
                     }
                     else
@@ -172,7 +173,7 @@ namespace FastFood.PresentationLayer.UCFunction
 
         private void dtList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cls_Salary._getChucDanh().Rows.Count > 0)
+            if (salary.GetChucDanh().Rows.Count > 0)
             {
                 int index = dtList.CurrentCell.RowIndex;
                 _chucDanhID = Convert.ToInt32(dtList.Rows[index].Cells[0].Value);

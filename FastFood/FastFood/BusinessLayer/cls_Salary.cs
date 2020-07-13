@@ -10,18 +10,18 @@ namespace FastFood.BusinessLayer
 {
     class cls_Salary
     {
-        public DataTable _getChucDanh()
+        public DataTable GetChucDanh()
         {
             string query = "SELECT * FROM tbl_ChucDanh";
             return cls_Database.TableRead(query);
         }
 
-        public static bool _insertChucDanh(string tenChucDanh, string tienLuong, string phuCap)
+        public  bool InsertChucDanh(string tenChucDanh, string tienLuong, string phuCap)
         {
             try
             {
                 string query = string.Format("INSERT INTO tbl_ChucDanh(TenChucDanh, TienLuong, PhuCap) VALUES (N'{0}', {1}, {2})", tenChucDanh, tienLuong, phuCap);
-                cls_Database.AED(query);
+                cls_Database.AED(query);    
                 return true;
             }
             catch (Exception)
@@ -30,7 +30,7 @@ namespace FastFood.BusinessLayer
             }
         }
 
-        public static bool _updateChucDanh(string tenChucDanh, string tienLuong, string phuCap, int chucDanhID)
+        public  bool UpdateChucDanh(string tenChucDanh, string tienLuong, string phuCap, int chucDanhID)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace FastFood.BusinessLayer
                 return false;
             }
         }
-        public static bool _checkChucDanh(int chucDanhID)
+        public  bool CheckChucDanh(int chucDanhID)
         {
             string query = string.Format("SELECT ChucDanhID FROM tbl_NhanVienChucDanh WHERE ChucDanhID = {0}", chucDanhID);
             DataTable dt = cls_Database.TableRead(query);
@@ -53,7 +53,7 @@ namespace FastFood.BusinessLayer
             }
             return true;
         }
-        public static bool _delChucDanh(int chucDanhID)
+        public  bool DelChucDanh(int chucDanhID)
         {
             try
             {
@@ -136,7 +136,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
             }
         }
 
-        public static bool _insertChiTietLuong(string ThangKeLuong, int NhanVienID, int NgayCongChuan, int NgayTinhLuong)
+        public  bool InsertChiTietLuong(string ThangKeLuong, int NhanVienID, int NgayCongChuan, int NgayTinhLuong)
         {
             try
             {
@@ -149,7 +149,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
                 return false;
             }
         }
-        public static DataTable _getChiTietBanKeLuong(string thang)
+        public  DataTable GetChiTietBanKeLuong(string thang)
         {
             try
             {
@@ -169,7 +169,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
             }
         }
 
-        public static bool _updateChiTietBanKeLuong(decimal TienLuongCung, decimal PhuCap, decimal TongLuong, decimal ThucLinh, string ID)
+        public  bool UpdateChiTietBanKeLuong(decimal TienLuongCung, decimal PhuCap, decimal TongLuong, decimal ThucLinh, string ID)
         {
             try
             {
@@ -182,7 +182,7 @@ from (select * from tbl_ChamCong where Thang = '{0}') a right outer join tbl_Nha
                 return false;
             }
         }
-        public static bool _updateTrangThaiBanKeLuong(string chiTietBanKeLuongID)
+        public  bool UpdateTrangThaiBanKeLuong(string chiTietBanKeLuongID)
         {
             try
             {
